@@ -32,7 +32,7 @@
         mount.innerHTML = `
             <section class="about-story section section--white" id="overview" aria-labelledby="about-story-title">
                 <div class="container-wide">
-                    <div class="about-story__head" data-aos="fade-up">
+                    <div class="about-story__head" data-reveal="up">
                         <p class="section-kicker">Platform story</p>
                         <h2 id="about-story-title">
                             Built for clearer appliance repair <span class="text-mark">requests</span>.
@@ -40,28 +40,28 @@
                     </div>
 
                     <div class="about-story__collage">
-                        <div class="about-story__photo image-frame" data-aos="zoom-in">
+                        <div class="about-story__photo image-frame" data-reveal="scale">
                             <img src="assets/images/service-6.jpg" alt="Modern refrigerator in a clean kitchen" width="520" height="520" loading="lazy">
                         </div>
 
-                        <div class="about-story__photo image-frame" data-aos="zoom-in" data-aos-delay="70">
+                        <div class="about-story__photo image-frame" data-reveal="scale" style="--reveal-delay: 70ms">
                             <img src="assets/images/service-4.jpg" alt="Washer and laundry appliances in a home" width="520" height="520" loading="lazy">
                         </div>
 
-                        <div class="about-story__photo image-frame" data-aos="zoom-in" data-aos-delay="140">
+                        <div class="about-story__photo image-frame" data-reveal="scale" style="--reveal-delay: 140ms">
                             <img src="assets/images/service-2.jpg" alt="Modern dryer area in a laundry room" width="520" height="520" loading="lazy">
                         </div>
 
-                        <div class="about-story__photo image-frame" data-aos="zoom-in" data-aos-delay="210">
+                        <div class="about-story__photo image-frame" data-reveal="scale" style="--reveal-delay: 210ms">
                             <img src="assets/images/service-5.jpg" alt="Oven and range in a premium kitchen" width="520" height="520" loading="lazy">
                         </div>
 
-                        <div class="about-story__photo about-story__photo--wide image-frame" data-aos="fade-up">
+                        <div class="about-story__photo about-story__photo--wide image-frame" data-reveal="up">
                             <img src="assets/images/hero-contact.jpg" alt="Premium home appliance area" width="1320" height="520" loading="lazy">
                         </div>
                     </div>
 
-                    <div class="about-story__text" data-aos="fade-up">
+                    <div class="about-story__text" data-reveal="up">
                         <p>
                             Servexa exists to help homeowners describe appliance issues with more clarity before comparing available local provider options. Instead of guessing which path fits best, users can start with appliance type, symptoms, location, and preferred timing.
                         </p>
@@ -112,7 +112,7 @@
             <section class="independent-model section section--emerald" id="comparison" aria-labelledby="independent-model-title">
                 <div class="container">
                     <div class="independent-model__grid">
-                        <div class="independent-model__list" data-aos="fade-right">
+                        <div class="independent-model__list" data-reveal="left">
                             ${items.map((item) => `
                                 <article class="independent-model__item">
                                     <i data-lucide="${item.icon}" aria-hidden="true"></i>
@@ -124,7 +124,7 @@
                             `).join('')}
                         </div>
 
-                        <div class="independent-model__content" data-aos="fade-left">
+                        <div class="independent-model__content" data-reveal="right">
                             <p class="section-kicker section-kicker--light">Independent matching model</p>
 
                             <h2 id="independent-model-title">
@@ -183,11 +183,11 @@
             <section class="about-help section section--soft" id="process" aria-labelledby="about-help-title">
                 <div class="container">
                     <div class="about-help__grid">
-                        <div class="about-help__photo photo-cover" data-aos="zoom-in">
+                        <div class="about-help__photo photo-cover" data-reveal="scale">
                             <img src="assets/images/hero-services.jpg" alt="Home appliance service request planning" width="760" height="760" loading="lazy">
                         </div>
 
-                        <div class="about-help__content" data-aos="fade-left">
+                        <div class="about-help__content" data-reveal="right">
                             <p class="section-kicker">How Servexa helps homeowners</p>
 
                             <h2 id="about-help-title">
@@ -243,7 +243,7 @@
                 <div class="container-wide">
                     <div class="compare-cards__grid">
                         ${cards.map((card, index) => `
-                            <article class="compare-card shine-surface" data-aos="fade-up" data-aos-delay="${index * 90}">
+                            <article class="compare-card shine-surface" data-reveal="up" style="--reveal-delay: ${Math.min(index * 55, 240)}ms">
                                 <div>
                                     <h3>${card.title}</h3>
                                     <p>${card.text}</p>
@@ -268,7 +268,7 @@
         mount.innerHTML = `
             <section class="trust-notes section section--soft" aria-label="Trust and transparency notes">
                 <div class="container">
-                    <div class="trust-notes__top" data-aos="fade-up">
+                    <div class="trust-notes__top" data-reveal="up">
                         <div class="slider-controls">
                             <button class="slider-btn trust-notes-prev" type="button" aria-label="Previous transparency note">
                                 <i data-lucide="arrow-left" aria-hidden="true"></i>
@@ -280,7 +280,7 @@
                         </div>
                     </div>
 
-                    <div class="swiper trust-notes__swiper" data-aos="fade-up">
+                    <div class="swiper trust-notes__swiper" data-reveal="up">
                         <div class="swiper-wrapper">
                             ${cards.map((card) => `
                                 <div class="swiper-slide">
@@ -408,7 +408,7 @@
             <section class="about-faq section section--white" id="faq" aria-labelledby="about-faq-title">
                 <div class="container">
                     <div class="about-faq__grid">
-                        <div class="about-faq__intro" data-aos="fade-right">
+                        <div class="about-faq__intro" data-reveal="left">
                             <p class="section-kicker">About FAQ</p>
 
                             <h2 id="about-faq-title">
@@ -420,7 +420,7 @@
                             </p>
                         </div>
 
-                        <div class="accordion" data-accordion data-aos="fade-left">
+                        <div class="accordion" data-reveal="right" data-accordion>
                             ${faq.map((item, index) => `
                                 <article class="accordion-item ${index === 0 ? 'is-open' : ''}">
                                     <button class="accordion-button" type="button" aria-expanded="${index === 0 ? 'true' : 'false'}">
@@ -480,8 +480,8 @@
 
         refreshIcons();
 
-        if (window.AOS && typeof window.AOS.refreshHard === 'function') {
-            window.AOS.refreshHard();
+        if (window.initScrollReveal) {
+            window.initScrollReveal(document);
         }
     }
 

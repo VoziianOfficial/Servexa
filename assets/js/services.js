@@ -293,7 +293,7 @@
                 {
                     title: 'Uneven heating',
                     icon: 'thermometer',
-                    image: 'assets/images/hero-oven-range.jpg',
+                    image: 'assets/images/hero-home.jpg',
                     sideImage: 'assets/images/service-5.jpg',
                     text: 'Share whether the oven runs too hot, too cool, takes too long, or cooks unevenly. Mention temperature changes or visible error codes if available.'
                 },
@@ -301,7 +301,7 @@
                     title: 'Burner issues',
                     icon: 'flame',
                     image: 'assets/images/service-5.jpg',
-                    sideImage: 'assets/images/hero-oven-range.jpg',
+                    sideImage: 'assets/images/hero-contact.jpg',
                     text: 'Describe whether burners fail to heat, heat unevenly, click repeatedly, or respond slowly to controls.'
                 },
                 {
@@ -315,7 +315,7 @@
                     title: 'Control problems',
                     icon: 'sliders-horizontal',
                     image: 'assets/images/hero-contact.jpg',
-                    sideImage: 'assets/images/hero-oven-range.jpg',
+                    sideImage: 'assets/images/hero-about.jpg',
                     text: 'Mention control panel issues, unresponsive buttons, display errors, or settings that do not hold during cooking.'
                 }
             ],
@@ -469,7 +469,7 @@
                 </div>
 
                 <div class="container shared-hero__content">
-                    <div class="shared-hero__inner" data-aos="fade-up">
+                    <div class="shared-hero__inner" data-reveal="up">
                         <p class="section-kicker section-kicker--light">${safeText(service.kicker)}</p>
 
                         <h1 id="service-hero-title">
@@ -508,7 +508,7 @@
             <section class="service-overview section section--white" id="overview" aria-labelledby="service-overview-title">
                 <div class="container-wide">
                     <div class="service-overview__head">
-                        <div data-aos="fade-right">
+                        <div data-reveal="left">
                             <p class="section-kicker">Service-specific overview</p>
 
                             <h2 id="service-overview-title">
@@ -516,10 +516,10 @@
                             </h2>
                         </div>
 
-                        <p data-aos="fade-left">${safeText(service.overviewText)}</p>
+                        <p data-reveal="right">${safeText(service.overviewText)}</p>
                     </div>
 
-                    <div class="service-overview__tabs" role="tablist" aria-label="${safeText(service.title)} issue options" data-aos="fade-up">
+                    <div class="service-overview__tabs" role="tablist" aria-label="${safeText(service.title)} issue options" data-reveal="up">
                         ${tabs.map((tab, index) => `
                             <button
                                 class="service-overview__tab ${index === 0 ? 'is-active' : ''}"
@@ -535,11 +535,11 @@
                     </div>
 
                     <div class="service-overview__media" data-service-overview-media>
-                        <div class="service-overview__photo-main image-frame" data-aos="fade-right">
+                        <div class="service-overview__photo-main image-frame" data-reveal="left">
                             <img src="${safeText(firstTab.image)}" alt="${safeText(firstTab.title)}" width="860" height="620" data-service-main-image>
                         </div>
 
-                        <div class="service-overview__side" data-aos="fade-left">
+                        <div class="service-overview__side" data-reveal="right">
                             <div class="service-overview__photo-side image-frame">
                                 <img src="${safeText(firstTab.sideImage)}" alt="${safeText(firstTab.title)} details" width="620" height="340" data-service-side-image>
                             </div>
@@ -619,7 +619,7 @@
         mount.innerHTML = `
             <section class="service-steps section section--dark" id="process" aria-labelledby="service-steps-title">
                 <div class="container-wide">
-                    <div class="service-steps__head" data-aos="fade-up">
+                    <div class="service-steps__head" data-reveal="up">
                         <p class="section-kicker section-kicker--light">How matching works for this service</p>
 
                         <h2 id="service-steps-title">
@@ -633,7 +633,7 @@
 
                     <div class="service-steps__grid">
                         ${steps.map((step, index) => `
-                            <article class="service-step-circle" data-aos="zoom-in" data-aos-delay="${index * 80}">
+                            <article class="service-step-circle" data-reveal="scale" style="--reveal-delay: ${Math.min(index * 55, 240)}ms">
                                 <div>
                                     <i data-lucide="${safeText(step.icon)}" aria-hidden="true"></i>
                                     <h3>${safeText(step.title)}</h3>
@@ -670,7 +670,7 @@
         mount.innerHTML = `
             <section class="common-issues section section--soft" aria-labelledby="common-issues-title">
                 <div class="container-wide">
-                    <div class="common-issues__photo" data-aos="fade-up">
+                    <div class="common-issues__photo" data-reveal="up">
                         <img src="${safeText(service.heroImage)}" alt="" width="1440" height="620" loading="lazy">
 
                         <div class="common-issues__photo-content">
@@ -687,14 +687,14 @@
                     </div>
 
                     <div class="common-issues__cards">
-                        <article class="common-issues__card" data-aos="fade-right">
+                        <article class="common-issues__card" data-reveal="left">
                             <h3>Primary symptoms</h3>
                             <div class="common-issues__list">
                                 ${issueList(firstColumn)}
                             </div>
                         </article>
 
-                        <article class="common-issues__card" data-aos="fade-left">
+                        <article class="common-issues__card" data-reveal="right">
                             <h3>Helpful request details</h3>
                             <div class="common-issues__list">
                                 ${issueList(secondColumn)}
@@ -720,11 +720,11 @@
             <section class="choice-factors section section--white" id="comparison" aria-labelledby="choice-factors-title">
                 <div class="container">
                     <div class="choice-factors__grid">
-                        <div class="choice-factors__photo photo-cover" data-aos="zoom-in">
+                        <div class="choice-factors__photo photo-cover" data-reveal="scale">
                             <img src="${safeText(service.heroImage)}" alt="${safeText(service.title)} provider choice factors" width="760" height="760" loading="lazy">
                         </div>
 
-                        <div class="choice-factors__content" data-aos="fade-left">
+                        <div class="choice-factors__content" data-reveal="right">
                             <p class="section-kicker">Provider choice factors</p>
 
                             <h2 id="choice-factors-title">
@@ -779,7 +779,7 @@
         mount.innerHTML = `
             <section class="related-services section section--soft" id="services" aria-labelledby="related-services-title">
                 <div class="container-wide">
-                    <div class="related-services__head" data-aos="fade-up">
+                    <div class="related-services__head" data-reveal="up">
                         <p class="section-kicker">Related service categories</p>
 
                         <h2 id="related-services-title">
@@ -789,7 +789,7 @@
 
                     <div class="related-services__grid">
                         ${related.map((service, index) => `
-                            <article class="related-service-card card-3d shine-surface" data-aos="fade-up" data-aos-delay="${index * 80}">
+                            <article class="related-service-card card-3d shine-surface" data-reveal="up" style="--reveal-delay: ${Math.min(index * 55, 240)}ms">
                                 <span class="related-service-card__icon">
                                     <i data-lucide="${safeText(service.icon)}" aria-hidden="true"></i>
                                 </span>
@@ -824,7 +824,7 @@
             <section class="service-faq section section--white" id="faq" aria-labelledby="service-faq-title">
                 <div class="container">
                     <div class="service-faq__grid">
-                        <aside class="service-faq__intro shine-surface" data-aos="fade-right">
+                        <aside class="service-faq__intro shine-surface" data-reveal="left">
                             <p class="section-kicker section-kicker--light">Service FAQ</p>
 
                             <h2 id="service-faq-title">
@@ -836,7 +836,7 @@
                             </p>
                         </aside>
 
-                        <div class="accordion" data-accordion data-aos="fade-left">
+                        <div class="accordion" data-reveal="right" data-accordion>
                             ${faq.map((item, index) => `
                                 <article class="accordion-item ${index === 0 ? 'is-open' : ''}">
                                     <button class="accordion-button" type="button" aria-expanded="${index === 0 ? 'true' : 'false'}">
@@ -896,8 +896,8 @@
 
         refreshIcons();
 
-        if (window.AOS && typeof window.AOS.refreshHard === 'function') {
-            window.AOS.refreshHard();
+        if (window.initScrollReveal) {
+            window.initScrollReveal(document);
         }
     }
 

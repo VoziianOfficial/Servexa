@@ -27,9 +27,9 @@
     --radius-lg: 26px;
     --radius-xl: 34px;
 
-    --shadow-soft: 0 18px 42px rgba(7, 9, 9, 0.12);
-    --shadow-card: 0 20px 55px rgba(0, 58, 59, 0.14);
-    --shadow-dark: 0 26px 70px rgba(0, 0, 0, 0.34);
+    --shadow-soft: none;
+    --shadow-card: none;
+    --shadow-dark: none;
 
     --header-height: 86px;
     --transition: 220ms ease;
@@ -134,6 +134,46 @@ main {
 :focus-visible {
     outline: 3px solid rgba(255, 180, 3, 0.72);
     outline-offset: 4px;
+}
+
+/* ================================
+   Smooth reveal system
+================================ */
+
+[data-reveal] {
+    opacity: 0;
+    transform: translate3d(0, 18px, 0);
+    transition:
+        opacity 700ms cubic-bezier(0.22, 1, 0.36, 1),
+        transform 700ms cubic-bezier(0.22, 1, 0.36, 1);
+    transition-delay: var(--reveal-delay, 0ms);
+    will-change: opacity, transform;
+}
+
+[data-reveal="left"] {
+    transform: translate3d(-18px, 0, 0);
+}
+
+[data-reveal="right"] {
+    transform: translate3d(18px, 0, 0);
+}
+
+[data-reveal="scale"] {
+    transform: scale(0.975);
+}
+
+[data-reveal].is-visible {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) scale(1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    [data-reveal] {
+        opacity: 1;
+        transform: none;
+        transition: none;
+        will-change: auto;
+    }
 }
 
 .skip-link {
@@ -295,26 +335,14 @@ p {
     letter-spacing: -0.01em;
     transition:
         transform var(--transition),
-        background var(--transition),
+        background-color var(--transition),
         border-color var(--transition),
-        color var(--transition),
-        box-shadow var(--transition);
+        opacity var(--transition);
     isolation: isolate;
 }
 
 .btn::after {
-    content: "";
-    position: absolute;
-    inset: -40% auto -40% -55%;
-    z-index: -1;
-    width: 42%;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.34), transparent);
-    transform: skewX(-18deg);
-    transition: left 560ms ease;
-}
-
-.btn:hover::after {
-    left: 110%;
+    content: none;
 }
 
 .btn:hover {
@@ -344,28 +372,16 @@ p {
     color: var(--color-black-cold);
     background: var(--color-yellow);
     border-color: rgba(255, 180, 3, 0.78);
-    box-shadow:
-        0 13px 24px rgba(255, 180, 3, 0.22),
-        inset 0 1px 0 rgba(255, 255, 255, 0.36),
-        inset 0 -3px 0 rgba(7, 9, 9, 0.14);
 }
 
 .btn--primary:hover {
     background: var(--color-yellow-hover);
-    box-shadow:
-        0 16px 30px rgba(255, 180, 3, 0.28),
-        inset 0 1px 0 rgba(255, 255, 255, 0.34),
-        inset 0 -3px 0 rgba(7, 9, 9, 0.18);
 }
 
 .btn--emerald {
     color: var(--color-light);
     background: var(--color-emerald-dark);
     border-color: rgba(0, 58, 59, 0.35);
-    box-shadow:
-        0 14px 32px rgba(0, 58, 59, 0.18),
-        inset 0 1px 0 rgba(244, 248, 246, 0.12),
-        inset 0 -3px 0 rgba(0, 0, 0, 0.18);
 }
 
 .btn--emerald:hover {
@@ -378,14 +394,10 @@ p {
     color: var(--color-light);
     background: rgba(7, 9, 9, 0.44);
     border-color: rgba(244, 248, 246, 0.22);
-    box-shadow:
-        inset 0 1px 0 rgba(244, 248, 246, 0.10),
-        0 14px 32px rgba(0, 0, 0, 0.16);
 }
 
 .btn--ghost-dark:hover,
 .btn--outline-light:hover {
-    color: var(--color-yellow);
     background: rgba(7, 9, 9, 0.66);
     border-color: rgba(255, 180, 3, 0.82);
 }
@@ -394,16 +406,10 @@ p {
     color: var(--color-emerald-dark);
     background: var(--color-white);
     border-color: var(--color-border);
-    box-shadow:
-        0 12px 26px rgba(0, 58, 59, 0.10),
-        inset 0 -2px 0 rgba(0, 58, 59, 0.06);
 }
 
 .btn--soft:hover {
     border-color: rgba(255, 180, 3, 0.78);
-    box-shadow:
-        0 16px 32px rgba(0, 58, 59, 0.14),
-        inset 0 -2px 0 rgba(255, 180, 3, 0.22);
 }
 
 .icon-btn {
@@ -418,16 +424,14 @@ p {
     background: rgba(244, 248, 246, 0.08);
     border: 1px solid rgba(244, 248, 246, 0.18);
     border-radius: 15px;
-    box-shadow: inset 0 1px 0 rgba(244, 248, 246, 0.10);
     transition:
         transform var(--transition),
         background var(--transition),
-        color var(--transition),
+        opacity var(--transition),
         border-color var(--transition);
 }
 
 .icon-btn:hover {
-    color: var(--color-yellow);
     background: rgba(7, 9, 9, 0.28);
     border-color: rgba(255, 180, 3, 0.74);
     transform: translateY(-2px);
@@ -454,7 +458,7 @@ p {
 }
 
 .site-header.is-scrolled {
-    box-shadow: 0 18px 48px rgba(0, 0, 0, 0.22);
+    box-shadow: none;
 }
 
 .site-header__inner {
@@ -855,7 +859,6 @@ p {
 }
 
 .search-results a:hover {
-    color: var(--color-yellow);
     background: rgba(244, 248, 246, 0.08);
 }
 
@@ -883,19 +886,7 @@ p {
 .image-frame::after,
 .shine-surface::after,
 .prefooter-cta::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    pointer-events: none;
-    background: linear-gradient(110deg, transparent 0%, rgba(255, 255, 255, 0.14) 42%, transparent 58%);
-    transform: translateX(-120%);
-    transition: transform 760ms ease;
-}
-
-.image-frame:hover::after,
-.shine-surface:hover::after,
-.prefooter-cta:hover::after {
-    transform: translateX(120%);
+    content: none;
 }
 
 .card-3d {
@@ -904,21 +895,16 @@ p {
     background: var(--color-white);
     border: 1px solid var(--color-border);
     border-radius: var(--radius-lg);
-    box-shadow:
-        var(--shadow-card),
-        inset 0 1px 0 rgba(255, 255, 255, 0.84);
     transition:
         transform var(--transition),
         border-color var(--transition),
-        box-shadow var(--transition);
+        background-color var(--transition),
+        opacity var(--transition);
 }
 
 .card-3d:hover {
     transform: translateY(-5px);
     border-color: rgba(255, 180, 3, 0.70);
-    box-shadow:
-        0 26px 62px rgba(0, 58, 59, 0.18),
-        inset 0 1px 0 rgba(255, 255, 255, 0.9);
 }
 
 .card-icon {
@@ -1429,12 +1415,11 @@ p {
     border-radius: 15px;
     transition:
         transform var(--transition),
-        color var(--transition),
+        background-color var(--transition),
         border-color var(--transition);
 }
 
 .slider-btn:hover {
-    color: var(--color-yellow);
     border-color: rgba(255, 180, 3, 0.72);
     transform: translateY(-2px);
 }
@@ -1445,12 +1430,166 @@ p {
     margin: auto;
 }
 
-[data-aos] {
-    pointer-events: auto;
+/* ================================
+   Global interactive hover polish
+================================ */
+
+.card,
+.service-card,
+.info-card,
+.request-intro-card,
+.contact-detail-card,
+.legal-card,
+.related-service-card,
+.accordion-item,
+.common-issues__card,
+.submission-step-card,
+.service-overview__tab,
+.trust-note-card,
+.platform-card,
+.service-showcase-card,
+.service-showcase__card,
+.services-intro-card,
+.compare-card,
+.process-circle,
+.popular-category-card,
+.contact-faq__question {
+    transition:
+        transform var(--transition),
+        border-color var(--transition),
+        background-color var(--transition),
+        opacity var(--transition);
 }
 
-.aos-init:not(.aos-animate) {
-    pointer-events: auto;
+.card:hover,
+.service-card:hover,
+.info-card:hover,
+.request-intro-card:hover,
+.contact-detail-card:hover,
+.legal-card:hover,
+.related-service-card:hover,
+.accordion-item:hover,
+.common-issues__card:hover,
+.submission-step-card:hover,
+.service-overview__tab:hover,
+.trust-note-card:hover,
+.platform-card:hover,
+.service-showcase-card:hover,
+.service-showcase__card:hover,
+.services-intro-card:hover,
+.compare-card:hover,
+.process-circle:hover,
+.popular-category-card:hover,
+.contact-faq__question:hover {
+    transform: translateY(-4px);
+    border-color: rgba(255, 180, 3, 0.68);
+}
+
+.card,
+.service-card,
+.info-card,
+.request-intro-card,
+.contact-detail-card,
+.legal-card,
+.related-service-card,
+.common-issues__card,
+.submission-step-card,
+.service-showcase-card,
+.service-showcase__card {
+    position: relative;
+    overflow: hidden;
+}
+
+.card::after,
+.service-card::after,
+.info-card::after,
+.request-intro-card::after,
+.contact-detail-card::after,
+.legal-card::after,
+.related-service-card::after,
+.common-issues__card::after,
+.submission-step-card::after,
+.service-showcase-card::after,
+.service-showcase__card::after {
+    content: "";
+    position: absolute;
+    left: 18px;
+    right: 18px;
+    bottom: 0;
+    height: 2px;
+    background: var(--color-yellow);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 320ms ease;
+    pointer-events: none;
+}
+
+.card:hover::after,
+.service-card:hover::after,
+.info-card:hover::after,
+.request-intro-card:hover::after,
+.contact-detail-card:hover::after,
+.legal-card:hover::after,
+.related-service-card:hover::after,
+.common-issues__card:hover::after,
+.submission-step-card:hover::after,
+.service-showcase-card:hover::after,
+.service-showcase__card:hover::after {
+    transform: scaleX(1);
+}
+
+/* Remove heavy shadows from interactive UI */
+.card,
+.service-card,
+.info-card,
+.request-intro-card,
+.contact-detail-card,
+.legal-card,
+.related-service-card,
+.accordion-item,
+.common-issues__card,
+.submission-step-card,
+.service-showcase-card,
+.service-showcase__card,
+.btn,
+.slider-btn,
+.card-3d,
+.compare-card,
+.services-intro-card,
+.trust-note-card,
+.process-circle,
+.popular-category-card,
+.contact-faq__answer,
+.contact-request__panel,
+.contact-detail-card,
+.form-card {
+    box-shadow: none !important;
+}
+
+/* Keep text colors stable on hover */
+.card:hover,
+.service-card:hover,
+.info-card:hover,
+.request-intro-card:hover,
+.contact-detail-card:hover,
+.legal-card:hover,
+.related-service-card:hover,
+.accordion-item:hover,
+.common-issues__card:hover,
+.submission-step-card:hover,
+.service-showcase-card:hover,
+.service-showcase__card:hover,
+.footer-links a:hover,
+.footer-contact a:hover,
+.desktop-nav__link:hover,
+.desktop-nav__button:hover,
+.services-dropdown__link:hover,
+.post-hero-strip__link:hover,
+.search-results a:hover,
+.btn:hover,
+.slider-btn:hover,
+a.btn:hover {
+    color: inherit;
 }
 
 .hidden {

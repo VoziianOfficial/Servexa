@@ -250,7 +250,7 @@
                 </div>
 
                 <div class="container shared-hero__content">
-                    <div class="shared-hero__inner" data-aos="fade-up">
+                    <div class="shared-hero__inner" data-reveal="up">
                         <p class="section-kicker section-kicker--light">${safeText(page.kicker)}</p>
 
                         <h1 id="legal-hero-title">
@@ -287,7 +287,7 @@
             <section class="legal-layout section section--soft" id="overview" aria-labelledby="legal-content-title">
                 <div class="container-wide">
                     <div class="legal-layout__grid">
-                        <aside class="legal-sidebar" data-aos="fade-right">
+                        <aside class="legal-sidebar" data-reveal="left">
                             <p class="legal-sidebar__title">Legal pages</p>
 
                             <nav class="legal-sidebar__links" aria-label="Legal page navigation">
@@ -300,7 +300,7 @@
                             </nav>
                         </aside>
 
-                        <div class="legal-content" data-aos="fade-left">
+                        <div class="legal-content" data-reveal="right">
                             <article class="legal-card legal-card--highlight">
                                 <div class="legal-meta">
                                     <span class="legal-meta__pill">
@@ -400,8 +400,8 @@
         buildLegalContent();
         refreshIcons();
 
-        if (window.AOS && typeof window.AOS.refreshHard === 'function') {
-            window.AOS.refreshHard();
+        if (window.initScrollReveal) {
+            window.initScrollReveal(document);
         }
     }
 

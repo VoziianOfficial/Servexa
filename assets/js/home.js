@@ -40,24 +40,24 @@
             <section class="home-quick-path section section--white" id="overview" aria-labelledby="home-quick-path-title">
                 <div class="container-wide">
                     <div class="home-quick-path__head">
-                        <div data-aos="fade-right">
+                    <div data-reveal="left">
                             <p class="section-kicker">Appliance issue quick path</p>
                             <h2 id="home-quick-path-title">
                                 Start with the <span class="text-mark">symptom</span>, not the guess.
                             </h2>
                         </div>
 
-                        <p data-aos="fade-left">
+                        <p data-reveal="right">
                             Select a common appliance concern and Servexa will show the type of details that can make a provider request clearer.
                         </p>
                     </div>
 
                     <div class="home-quick-path__grid">
-                        <div class="home-quick-path__photo image-frame" data-aos="fade-right">
+                        <div class="home-quick-path__photo image-frame" data-reveal="left">
                             <img src="${safeText(items[0].image)}" alt="${safeText(items[0].title)}" width="860" height="620" data-quick-path-image>
                         </div>
 
-                        <div class="home-quick-path__list" data-aos="fade-left" role="tablist" aria-label="Appliance issue options">
+                        <div class="home-quick-path__list" data-reveal="right" role="tablist" aria-label="Appliance issue options">
                             ${items.map((item, index) => `
                                 <button
                                     class="home-quick-path__button ${index === 0 ? 'is-active' : ''}"
@@ -73,7 +73,7 @@
                             `).join('')}
                         </div>
 
-                        <article class="home-quick-path__detail" data-aos="fade-up" data-quick-path-detail>
+                        <article class="home-quick-path__detail" data-reveal="up" data-quick-path-detail>
                             <span class="home-quick-path__detail-icon">
                                 <i data-lucide="${safeText(items[0].icon)}" aria-hidden="true"></i>
                             </span>
@@ -202,7 +202,7 @@
         mount.innerHTML = `
             <section class="popular-categories section section--soft" id="services" aria-labelledby="popular-categories-title">
                 <div class="container-wide">
-                    <div class="popular-categories__head" data-aos="fade-up">
+                    <div class="popular-categories__head" data-reveal="up">
                         <p class="section-kicker">Popular appliance repair categories</p>
                         <h2 id="popular-categories-title">
                             Choose a clear service <span class="text-mark">path</span>.
@@ -211,7 +211,7 @@
 
                     <div class="popular-categories__grid">
                         ${services.map((service, index) => `
-                            <article class="popular-category-card card-3d shine-surface" data-aos="fade-up" data-aos-delay="${index * 80}">
+                            <article class="popular-category-card card-3d shine-surface" data-reveal="up" style="--reveal-delay: ${Math.min(index * 55, 240)}ms">
                                 <div class="popular-category-card__top">
                                     <span class="popular-category-card__number">0${index + 1}</span>
                                     <i class="card-icon" data-lucide="${safeText(service.icon)}" aria-hidden="true"></i>
@@ -245,7 +245,7 @@
                 </div>
 
                 <div class="container-wide">
-                    <article class="matching-photo-section__card shine-surface" data-aos="fade-right">
+                    <article class="matching-photo-section__card shine-surface" data-reveal="scale">
                         <p class="section-kicker section-kicker--light">How Servexa matching works</p>
 
                         <h2 id="matching-works-title">
@@ -306,7 +306,7 @@
             <section class="comparison-factors section section--dark" id="comparison" aria-labelledby="comparison-factors-title">
                 <div class="container-wide">
                     <div class="comparison-factors__layout">
-                        <div class="comparison-factors__content" data-aos="fade-right">
+                        <div class="comparison-factors__content" data-reveal="left">
                             <p class="section-kicker section-kicker--light">Provider comparison factors</p>
 
                             <h2 id="comparison-factors-title">
@@ -319,7 +319,7 @@
 
                             <div class="comparison-factors__list">
                                 ${factors.map((factor, index) => `
-                                    <div class="comparison-factors__item" data-aos="fade-up" data-aos-delay="${index * 45}">
+                                    <div class="comparison-factors__item" data-reveal="up" style="--reveal-delay: ${Math.min(index * 45, 220)}ms">
                                         <i data-lucide="check" aria-hidden="true"></i>
                                         <span>${safeText(factor)}</span>
                                     </div>
@@ -327,7 +327,7 @@
                             </div>
                         </div>
 
-                        <div class="comparison-factors__photo-wrap" data-aos="fade-left">
+                        <div class="comparison-factors__photo-wrap" data-reveal="right">
                             <div class="comparison-factors__photo photo-cover shine-surface">
                                 <img src="assets/images/service-4.jpg" alt="Modern appliance area prepared for repair provider comparison" width="760" height="760" loading="lazy">
                             </div>
@@ -349,7 +349,7 @@
         mount.innerHTML = `
             <section class="home-stats section section--dark" aria-label="Servexa process numbers">
                 <div class="container-wide">
-                    <div class="home-stats__inner" data-aos="fade-up">
+                    <div class="home-stats__inner" data-reveal="up">
                         ${stats.map((stat) => `
                             <article class="home-stat">
                                 <div class="home-stat__value">
@@ -423,11 +423,11 @@
             <section class="platform-transparency section section--soft" aria-labelledby="platform-transparency-title">
                 <div class="container">
                     <div class="platform-transparency__grid">
-                        <div class="platform-transparency__photo photo-cover" data-aos="zoom-in">
+                        <div class="platform-transparency__photo photo-cover" data-reveal="scale">
                             <img src="assets/images/hero-card.jpg" alt="Modern home appliance area with premium interior details" width="720" height="720" loading="lazy">
                         </div>
 
-                        <div class="platform-transparency__content" data-aos="fade-left">
+                        <div class="platform-transparency__content" data-reveal="right">
                             <p class="section-kicker">Platform transparency</p>
 
                             <h2 id="platform-transparency-title">
@@ -488,7 +488,7 @@
         mount.innerHTML = `
             <section class="home-faq section section--white" id="faq" aria-labelledby="home-faq-title">
                 <div class="container-wide">
-                    <div class="home-faq__head" data-aos="fade-up">
+                    <div class="home-faq__head" data-reveal="up">
                         <p class="section-kicker">FAQ</p>
 
                         <h2 id="home-faq-title">
@@ -501,7 +501,7 @@
                     </div>
 
                     <div class="home-faq-switcher" data-home-faq-switcher>
-                        <div class="home-faq-switcher__questions" role="tablist" aria-label="FAQ questions" data-aos="fade-right">
+                        <div class="home-faq-switcher__questions" role="tablist" aria-label="FAQ questions" data-reveal="left">
                             ${faq.map((item, index) => `
                                 <button
                                     class="home-faq-switcher__question ${index === 0 ? 'is-active' : ''}"
@@ -517,7 +517,7 @@
                             `).join('')}
                         </div>
 
-                  <article class="home-faq-switcher__answer shine-surface" data-aos="fade-left" data-faq-answer>
+                        <article class="home-faq-switcher__answer shine-surface" data-reveal="right" data-faq-answer>
     <div class="home-faq-switcher__answer-top">
         <span class="home-faq-switcher__answer-number">01</span>
         <i data-lucide="circle-help" aria-hidden="true"></i>
@@ -636,8 +636,8 @@
 
         refreshIcons();
 
-        if (window.AOS && typeof window.AOS.refreshHard === 'function') {
-            window.AOS.refreshHard();
+        if (window.initScrollReveal) {
+            window.initScrollReveal(document);
         }
     }
 

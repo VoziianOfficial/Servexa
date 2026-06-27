@@ -50,7 +50,7 @@
         mount.innerHTML = `
             <section class="services-intro section section--white" id="overview" aria-labelledby="services-intro-title">
                 <div class="container-wide">
-                    <div class="services-intro__head" data-aos="fade-up">
+                    <div class="services-intro__head" data-reveal="up">
                         <p class="section-kicker">Service categories intro</p>
                         <h2 id="services-intro-title">
                             Pick the appliance <span class="text-mark">path</span> that fits your issue.
@@ -59,7 +59,7 @@
 
                     <div class="services-intro__grid">
                         ${cards.map((card, index) => `
-                            <article class="services-intro-card shine-surface" data-aos="fade-up" data-aos-delay="${index * 80}">
+                            <article class="services-intro-card shine-surface" data-reveal="up" style="--reveal-delay: ${Math.min(index * 55, 240)}ms">
                                 <div>
                                     <h3>${safeText(card.title)}</h3>
                                     <p>${safeText(card.text)}</p>
@@ -119,7 +119,7 @@
                             </div>
                         </div>
 
-                        <div class="service-showcase__slider" data-aos="fade-left">
+                        <div class="service-showcase__slider" data-reveal="right">
                             <div class="swiper service-showcase__swiper">
                                 <div class="swiper-wrapper">
                                     ${services.map((service) => `
@@ -218,7 +218,7 @@
                 </div>
 
                 <div class="container">
-                    <div class="matching-guide__content" data-aos="fade-up">
+                    <div class="matching-guide__content" data-reveal="up">
                         <p class="section-kicker section-kicker--light">Appliance issue matching guide</p>
 
                         <h2 id="matching-guide-title">
@@ -284,7 +284,7 @@
             <section class="request-process section section--white" id="process" aria-labelledby="request-process-title">
                 <div class="container-wide">
                     <div class="request-process__top">
-                        <div class="request-process__photos" data-aos="fade-right">
+                        <div class="request-process__photos" data-reveal="left">
                             <div class="request-process__photo image-frame">
                                 <img src="assets/images/service-4.jpg" alt="Dishwasher in a modern kitchen" width="520" height="760" loading="lazy">
                             </div>
@@ -294,7 +294,7 @@
                             </div>
                         </div>
 
-                        <div class="request-process__content" data-aos="fade-left">
+                        <div class="request-process__content" data-reveal="right">
                             <p class="section-kicker">General request process</p>
 
                             <h2 id="request-process-title">
@@ -329,7 +329,7 @@
 
                     <div class="request-process__steps">
                         ${steps.map((step, index) => `
-                            <article class="process-circle" data-aos="zoom-in" data-aos-delay="${index * 80}">
+                            <article class="process-circle" data-reveal="scale" style="--reveal-delay: ${Math.min(index * 55, 240)}ms">
                                 <div class="process-circle__inner">
                                     <i data-lucide="${safeText(step.icon)}" aria-hidden="true"></i>
                                     <h3>${safeText(step.title)}</h3>
@@ -376,7 +376,7 @@
             <section class="services-faq section section--soft" id="faq" aria-labelledby="all-services-faq-title">
                 <div class="container">
                     <div class="services-faq__grid">
-                        <div class="services-faq__intro" data-aos="fade-right">
+                        <div class="services-faq__intro" data-reveal="left">
                             <p class="section-kicker">All services FAQ</p>
 
                             <h2 id="all-services-faq-title">
@@ -388,7 +388,7 @@
                             </p>
                         </div>
 
-                        <div class="accordion" data-accordion data-aos="fade-left">
+                        <div class="accordion" data-reveal="right" data-accordion>
                             ${faq.map((item, index) => `
                                 <article class="accordion-item ${index === 0 ? 'is-open' : ''}">
                                     <button class="accordion-button" type="button" aria-expanded="${index === 0 ? 'true' : 'false'}">
@@ -446,8 +446,8 @@
 
         refreshIcons();
 
-        if (window.AOS && typeof window.AOS.refreshHard === 'function') {
-            window.AOS.refreshHard();
+        if (window.initScrollReveal) {
+            window.initScrollReveal(document);
         }
     }
 

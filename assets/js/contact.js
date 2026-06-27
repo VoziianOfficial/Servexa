@@ -28,7 +28,7 @@
         mount.innerHTML = `
             <section class="request-intro section section--white" id="overview" aria-labelledby="request-intro-title">
                 <div class="container-wide">
-                    <div class="request-intro__head" data-aos="fade-up">
+                    <div class="request-intro__head" data-reveal="up">
                         <p class="section-kicker">Request intro</p>
 
                         <h2 id="request-intro-title">
@@ -38,7 +38,7 @@
 
                     <div class="request-intro__grid">
                         ${cards.map((card, index) => `
-                            <article class="request-intro-card shine-surface" data-aos="fade-up" data-aos-delay="${index * 80}">
+                            <article class="request-intro-card shine-surface" data-reveal="up" style="--reveal-delay: ${Math.min(index * 55, 240)}ms">
                                 <div>
                                     <h3>${safeText(card.title)}</h3>
                                     <p>${safeText(card.text)}</p>
@@ -69,7 +69,7 @@
 
                 <div class="container-wide">
                     <div class="contact-request__grid">
-                        <aside class="contact-request__panel shine-surface" data-aos="fade-right">
+                        <aside class="contact-request__panel shine-surface" data-reveal="left">
                             <p class="section-kicker section-kicker--light">Main request form</p>
 
                             <h2 id="request-form-title">
@@ -103,7 +103,7 @@
                             </div>
                         </aside>
 
-                        <form class="contact-request__form form-card" action="${safeText(config.contact?.formEndpoint || 'contact.php')}" method="POST" data-contact-form data-aos="fade-left" novalidate>
+                        <form class="contact-request__form form-card" action="${safeText(config.contact?.formEndpoint || 'contact.php')}" method="POST" data-contact-form data-reveal="right" novalidate>
                             <h3>Start a request</h3>
                             <p>Fields marked with * are required. The form requires PHP-enabled hosting to send email.</p>
 
@@ -320,11 +320,11 @@
             <section class="contact-details section section--soft" id="contact" aria-labelledby="contact-details-title">
                 <div class="container-wide">
                     <div class="contact-details__grid">
-                        <div class="contact-details__photo image-frame" data-aos="fade-right">
+                        <div class="contact-details__photo image-frame" data-reveal="left">
                             <img src="assets/images/card-contact.jpg" alt="Modern appliance area in a premium home" width="760" height="720" loading="lazy">
                         </div>
 
-                        <div class="contact-details__content" data-aos="fade-left">
+                        <div class="contact-details__content" data-reveal="right">
                             <p class="section-kicker">Contact details</p>
 
                             <h2 id="contact-details-title">
@@ -364,7 +364,7 @@
         mount.innerHTML = `
             <section class="submission-steps section section--white" id="process" aria-labelledby="submission-steps-title">
                 <div class="container">
-                    <div class="submission-steps__head" data-aos="fade-up">
+                    <div class="submission-steps__head" data-reveal="up">
                         <div>
                             <p class="section-kicker">What happens after submission</p>
 
@@ -388,7 +388,7 @@
                         </div>
                     </div>
 
-                    <div class="swiper submission-steps__swiper" data-aos="fade-up">
+                    <div class="swiper submission-steps__swiper" data-reveal="up">
                         <div class="swiper-wrapper">
                             ${cards.map((card) => `
                                 <div class="swiper-slide">
@@ -453,7 +453,7 @@
             <section class="contact-faq section section--soft" id="faq" aria-labelledby="contact-faq-title">
                 <div class="container">
                     <div class="contact-faq__grid">
-                        <div class="contact-faq__cards" role="tablist" aria-label="Contact questions" data-aos="fade-right">
+                        <div class="contact-faq__cards" role="tablist" aria-label="Contact questions" data-reveal="left">
                             ${faq.map((item, index) => `
                                 <button
                                     class="contact-faq__question ${index === 0 ? 'is-active' : ''}"
@@ -468,7 +468,7 @@
                             `).join('')}
                         </div>
 
-                        <article class="contact-faq__answer shine-surface" data-contact-faq-answer data-aos="fade-left">
+                        <article class="contact-faq__answer shine-surface" data-contact-faq-answer data-reveal="right">
                             <span class="contact-faq__answer-icon">
                                 <i data-lucide="message-circle-question" aria-hidden="true"></i>
                             </span>
@@ -560,8 +560,8 @@
 
         refreshIcons();
 
-        if (window.AOS && typeof window.AOS.refreshHard === 'function') {
-            window.AOS.refreshHard();
+        if (window.initScrollReveal) {
+            window.initScrollReveal(document);
         }
     }
 

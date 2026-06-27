@@ -356,7 +356,7 @@
                     </div>
 
                     <div class="container shared-hero__content">
-                        <div class="shared-hero__inner" data-aos="fade-up">
+                        <div class="shared-hero__inner" data-reveal="up">
                             ${heroData.kicker ? `<p class="section-kicker section-kicker--light">${safeText(heroData.kicker)}</p>` : ''}
 
                             <h1 id="${page}-hero-title">${markedTitle}</h1>
@@ -607,19 +607,34 @@
         }
     }
 
-    function initAOS() {
-        if (!window.AOS) return;
+    function initScrollReveal(root = document) {
+        const items = Array.from(root.querySelectorAll('[data-reveal]'));
 
-        window.AOS.init({
-            duration: 760,
-            easing: 'ease-out-cubic',
-            once: true,
-            offset: 80,
-            disable: () => window.innerWidth < 420
+        if (!items.length) return;
+
+        if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+            items.forEach((item) => item.classList.add('is-visible'));
+            return;
+        }
+
+        const observer = new IntersectionObserver((entries, currentObserver) => {
+            entries.forEach((entry) => {
+                if (!entry.isIntersecting) return;
+
+                entry.target.classList.add('is-visible');
+                currentObserver.unobserve(entry.target);
+            });
+        }, {
+            threshold: 0.16,
+            rootMargin: '0px 0px -8% 0px'
         });
 
-        window.addEventListener('load', () => {
-            window.AOS.refreshHard();
+        items.forEach((item, index) => {
+            if (!item.style.getPropertyValue('--reveal-delay')) {
+                item.style.setProperty('--reveal-delay', `${Math.min(index * 45, 220)}ms`);
+            }
+
+            observer.observe(item);
         });
     }
 
@@ -642,7 +657,7 @@
         buildCookieBanner();
 
         refreshIcons();
-        initAOS();
+        initScrollReveal(document);
     }
 
     document.addEventListener('DOMContentLoaded', init);
@@ -656,4 +671,6 @@
         setupAccordions,
         getValueByPath
     };
+
+    window.initScrollReveal = initScrollReveal;
 })();
