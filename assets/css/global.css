@@ -1164,7 +1164,7 @@ p {
 }
 
 .prefooter-cta h2 {
-    max-width: 780px;
+    max-width: 800px;
     color: var(--color-light);
     font-size: clamp(2rem, 3.6vw, 2.85rem);
 }

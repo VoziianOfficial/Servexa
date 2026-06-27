@@ -445,49 +445,118 @@
 
         mount.innerHTML = `
             <section class="home-faq section section--white" id="faq" aria-labelledby="home-faq-title">
-                <div class="container">
-                    <div class="home-faq__wrap">
-                        <div class="home-faq__decor" aria-hidden="true">?</div>
+                <div class="container-wide">
+                    <div class="home-faq__head" data-aos="fade-up">
+                        <p class="section-kicker">FAQ</p>
 
-                        <div class="home-faq__intro" data-aos="fade-right">
-                            <p class="section-kicker">FAQ</p>
+                        <h2 id="home-faq-title">
+                            Clear answers before you submit a <span class="text-mark">request</span>.
+                        </h2>
 
-                            <h2 id="home-faq-title">
-                                Clear answers before you submit a <span class="text-mark">request</span>.
-                            </h2>
+                        <p>
+                            A focused FAQ switcher with quick answers about how Servexa works as an independent provider-matching platform.
+                        </p>
+                    </div>
 
-                            <p>
-                                These answers explain how Servexa works as an independent provider-matching platform.
-                            </p>
-                        </div>
-
-                        <div class="home-faq__accordion accordion" data-accordion data-aos="fade-left">
+                    <div class="home-faq-switcher" data-home-faq-switcher>
+                        <div class="home-faq-switcher__questions" role="tablist" aria-label="FAQ questions" data-aos="fade-right">
                             ${faq.map((item, index) => `
-                                <article class="accordion-item ${index === 0 ? 'is-open' : ''}">
-                                    <button class="accordion-button" type="button" aria-expanded="${index === 0 ? 'true' : 'false'}">
-                                        <span>
-                                            <i data-lucide="circle-help" aria-hidden="true"></i>
-                                            ${safeText(item.question)}
-                                        </span>
-                                        <i data-lucide="plus" aria-hidden="true"></i>
-                                    </button>
-
-                                    <div class="accordion-panel">
-                                        <div class="accordion-panel__inner">
-                                            <p>${safeText(item.answer)}</p>
-                                        </div>
-                                    </div>
-                                </article>
+                                <button
+                                    class="home-faq-switcher__question ${index === 0 ? 'is-active' : ''}"
+                                    type="button"
+                                    role="tab"
+                                    aria-selected="${index === 0 ? 'true' : 'false'}"
+                                    data-faq-index="${index}"
+                                >
+                                    <span class="home-faq-switcher__number">${String(index + 1).padStart(2, '0')}</span>
+                                    <span class="home-faq-switcher__question-text">${safeText(item.question)}</span>
+                                    <i data-lucide="arrow-up-right" aria-hidden="true"></i>
+                                </button>
                             `).join('')}
                         </div>
+
+                  <article class="home-faq-switcher__answer shine-surface" data-aos="fade-left" data-faq-answer>
+    <div class="home-faq-switcher__answer-top">
+        <span class="home-faq-switcher__answer-number">01</span>
+        <i data-lucide="circle-help" aria-hidden="true"></i>
+    </div>
+
+    <h3>${safeText(faq[0].question)}</h3>
+
+    <div class="home-faq-switcher__answer-text">
+        <p>${safeText(faq[0].answer)}</p>
+        <p>
+            Servexa keeps the request path organized so users can review appliance provider options with clearer context before deciding whether to continue.
+        </p>
+    </div>
+
+    <a class="btn btn--emerald btn--small" href="contact.html">
+        Start a request
+        <i data-lucide="arrow-up-right" aria-hidden="true"></i>
+    </a>
+</article>
                     </div>
                 </div>
             </section>
         `;
 
+        const buttons = qsa('[data-faq-index]', mount);
+        const answer = qs('[data-faq-answer]', mount);
+
+        buttons.forEach((button) => {
+            button.addEventListener('click', () => {
+                const index = Number(button.getAttribute('data-faq-index'));
+                const item = faq[index];
+
+                if (!item || !answer) return;
+
+                buttons.forEach((currentButton) => {
+                    currentButton.classList.remove('is-active');
+                    currentButton.setAttribute('aria-selected', 'false');
+                });
+
+                button.classList.add('is-active');
+                button.setAttribute('aria-selected', 'true');
+
+                answer.style.opacity = '0.2';
+                answer.style.transform = 'translateY(8px)';
+
+                window.setTimeout(() => {
+                    answer.innerHTML = `
+                        <div class="home-faq-switcher__answer-top">
+                            <span class="home-faq-switcher__answer-number">${String(index + 1).padStart(2, '0')}</span>
+                            <i data-lucide="circle-help" aria-hidden="true"></i>
+                        </div>
+
+                       <h3>${safeText(item.question)}</h3>
+
+                                        <div class="home-faq-switcher__answer-text">
+                    <p>${safeText(item.answer)}</p>
+                    <p>
+                        Servexa keeps the request path organized so users can review appliance provider options with clearer context before deciding whether to continue.
+                    </p>
+                     </div>
+
+                <a class="btn btn--emerald btn--small" href="contact.html">
+                            Start a request
+                            <i data-lucide="arrow-up-right" aria-hidden="true"></i>
+                        </a>
+                    `;
+
+                    refreshIcons();
+
+                    answer.style.opacity = '1';
+                    answer.style.transform = 'translateY(0)';
+                }, 160);
+            });
+        });
+
+        if (answer) {
+            answer.style.transition = 'opacity 220ms ease, transform 220ms ease';
+        }
+
         injectFAQSchema(faq, 'home-faq-schema');
         refreshIcons();
-        setupAccordions();
     }
 
     function injectFAQSchema(faq, id) {
