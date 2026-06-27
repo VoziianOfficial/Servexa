@@ -36,7 +36,7 @@
                     title: 'Leaks or water',
                     icon: 'droplets',
                     image: 'assets/images/hero-dishwasher.jpg',
-                    sideImage: 'assets/images/card-4.jpg',
+                    sideImage: 'assets/images/card-11.jpg',
                     text: 'Include where water appears, whether the leak happens near the dispenser or bottom area, and whether the appliance has an ice maker or water line.'
                 },
                 {
