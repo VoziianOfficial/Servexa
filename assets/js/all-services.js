@@ -85,8 +85,8 @@
         mount.innerHTML = `
             <section class="service-showcase section section--soft" id="services" aria-labelledby="service-showcase-title">
                 <div class="container-wide">
-                    <div class="service-showcase__grid">
-                        <div class="service-showcase__content" data-aos="fade-right">
+                    <div class="service-showcase__layout">
+                        <div class="service-showcase__head">
                             <p class="section-kicker">Full service category grid</p>
 
                             <h2 id="service-showcase-title">
@@ -119,7 +119,7 @@
                             </div>
                         </div>
 
-                        <div class="service-showcase__swiper-wrap" data-aos="fade-left">
+                        <div class="service-showcase__slider" data-aos="fade-left">
                             <div class="swiper service-showcase__swiper">
                                 <div class="swiper-wrapper">
                                     ${services.map((service) => `
@@ -132,7 +132,7 @@
                                                 <span class="service-showcase-card__content">
                                                     <span class="service-showcase-card__top">
                                                         <h3>${safeText(service.title)}</h3>
-                                                        <i data-lucide="${safeText(service.icon)}" aria-hidden="true"></i>
+                                                        <i class="service-showcase-card__icon" data-lucide="${safeText(service.icon)}" aria-hidden="true"></i>
                                                     </span>
 
                                                     <p>${safeText(service.description)}</p>
@@ -155,8 +155,9 @@
                 slidesPerView: 2,
                 spaceBetween: 18,
                 loop: true,
-                speed: 650,
+                speed: 620,
                 grabCursor: true,
+                watchOverflow: true,
                 navigation: {
                     nextEl: '.service-showcase-next',
                     prevEl: '.service-showcase-prev'
@@ -166,7 +167,11 @@
                         slidesPerView: 1,
                         spaceBetween: 14
                     },
-                    760: {
+                    680: {
+                        slidesPerView: 2,
+                        spaceBetween: 16
+                    },
+                    1180: {
                         slidesPerView: 2,
                         spaceBetween: 18
                     }
