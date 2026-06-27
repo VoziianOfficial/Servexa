@@ -411,13 +411,18 @@
     }
 
     .compare-card {
+        position: relative;
         grid-template-columns: 1fr;
         min-height: auto;
+        padding: 24px 82px 24px 24px;
     }
 
     .compare-card svg {
-        width: 50px;
-        height: 50px;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        width: 42px;
+        height: 42px;
     }
 
     .trust-note-card {
@@ -802,10 +807,6 @@
     position: relative;
     z-index: 1;
 }
-
-/* ================================
-   Global motion cleanup
-================================ */
 
 .about-story__text,
 .about-help__photo,

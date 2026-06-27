@@ -136,10 +136,6 @@ main {
     outline-offset: 4px;
 }
 
-/* ================================
-   Smooth reveal system
-================================ */
-
 [data-reveal] {
     opacity: 0;
     transform: translate3d(0, 18px, 0);
@@ -1428,10 +1424,6 @@ h4 {
     margin: auto;
 }
 
-/* ================================
-   Global interactive hover polish
-================================ */
-
 .card,
 .service-card,
 .info-card,
@@ -1536,7 +1528,6 @@ h4 {
     transform: scaleX(1);
 }
 
-/* Remove heavy shadows from interactive UI */
 .card,
 .service-card,
 .info-card,
@@ -1564,7 +1555,6 @@ h4 {
     box-shadow: none !important;
 }
 
-/* Keep text colors stable on hover */
 .card:hover,
 .service-card:hover,
 .info-card:hover,
@@ -1895,9 +1885,6 @@ a.btn:hover {
         transform: none !important;
     }
 }
-
-
-/* Strong real dark overlay for shared heroes */
 
 .shared-hero {
     position: relative;

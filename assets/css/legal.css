@@ -207,6 +207,7 @@
 .legal-contact-card span {
     display: flex;
     align-items: flex-start;
+    align-items: center;
     gap: 10px;
     padding: 14px;
     color: var(--color-text);
@@ -305,10 +306,6 @@
         border-radius: 14px;
     }
 }
-
-/* ================================
-   Global motion cleanup
-================================ */
 
 .legal-sidebar,
 .legal-card,

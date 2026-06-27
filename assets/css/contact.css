@@ -497,12 +497,20 @@
 
     .request-intro-card,
     .submission-step-card {
+        position: relative;
         grid-template-columns: 1fr;
     }
 
+    .request-intro-card {
+        padding: 24px 82px 24px 24px;
+    }
+
     .request-intro-card svg {
-        width: 50px;
-        height: 50px;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        width: 42px;
+        height: 42px;
     }
 
     .contact-request__form,
@@ -589,10 +597,6 @@
     min-height: inherit;
     object-fit: cover;
 }
-
-/* ================================
-   Global motion cleanup
-================================ */
 
 .request-intro-card,
 .contact-request__panel,

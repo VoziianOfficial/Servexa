@@ -511,12 +511,17 @@
 
 @media (max-width: 760px) {
     .services-intro-card {
+        position: relative;
         grid-template-columns: 1fr;
+        padding: 24px 82px 24px 24px;
     }
 
     .services-intro-card svg {
-        width: 50px;
-        height: 50px;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        width: 42px;
+        height: 42px;
     }
 
     .service-showcase-card {
@@ -573,10 +578,6 @@
         padding: 24px;
     }
 }
-
-/* ================================
-   Global motion cleanup
-================================ */
 
 .services-intro-card,
 .matching-guide__content,

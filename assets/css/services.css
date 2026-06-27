@@ -633,6 +633,27 @@
 
 @media (max-width: 720px) {
 
+    .related-service-card {
+        position: relative;
+        grid-template-columns: 1fr;
+        padding: 24px 24px 24px 24px;
+        padding-right: 94px;
+    }
+
+    .related-service-card__icon {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        width: 52px;
+        height: 52px;
+        border-radius: 16px;
+    }
+
+    .related-service-card__icon svg {
+        width: 26px;
+        height: 26px;
+    }
+
     .common-issues__cards,
     .common-issues__list {
         grid-template-columns: 1fr;
@@ -651,10 +672,6 @@
         min-height: 44px;
     }
 }
-
-/* ================================
-   Global motion cleanup
-================================ */
 
 .service-overview__tab,
 .service-overview__photo-side,
@@ -693,4 +710,3 @@
 .service-step-circle {
     background: rgba(244, 248, 246, 0.055);
 }
-
