@@ -378,7 +378,7 @@ window.SERVEXA_SITE_CONFIG = {
             },
             {
                 title: 'User choice',
-                icon: 'hand-pointer',
+                icon: 'mouse-pointer-click',
                 text: 'Users decide whether to continue with a provider after reviewing available options.'
             },
             {
@@ -455,7 +455,7 @@ window.SERVEXA_SITE_CONFIG = {
             },
             {
                 title: 'User decision',
-                icon: 'hand-pointer',
+                icon: 'mouse-pointer-click',
                 text: 'You choose whether to continue with any provider after reviewing available options.'
             }
         ],
@@ -499,7 +499,7 @@ window.SERVEXA_SITE_CONFIG = {
             },
             {
                 title: 'Choose next step',
-                icon: 'hand-pointer',
+                icon: 'mouse-pointer-click',
                 text: 'Decide whether to continue directly with a provider based on their terms.'
             }
         ],

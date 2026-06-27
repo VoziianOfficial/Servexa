@@ -231,7 +231,7 @@
                             </div>
 
                             <div class="matching-photo-section__step">
-                                <i data-lucide="hand-pointer" aria-hidden="true"></i>
+                                <i data-lucide="mouse-pointer-click" aria-hidden="true"></i>
                                 <span>Decide whether to continue based on provider terms.</span>
                             </div>
                         </div>
@@ -400,7 +400,7 @@
                                 </div>
 
                                 <div class="platform-transparency__note">
-                                    <i data-lucide="hand-pointer" aria-hidden="true"></i>
+                                    <i data-lucide="mouse-pointer-click" aria-hidden="true"></i>
                                     <span>Users choose whether to continue.</span>
                                 </div>
 

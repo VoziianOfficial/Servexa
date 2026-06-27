@@ -97,7 +97,7 @@
                 text: 'Participating providers handle repair-related work, availability, pricing, scheduling, warranties, and service terms.'
             },
             {
-                icon: 'hand-pointer',
+                icon: 'mouse-pointer-click',
                 title: 'Users choose whether to continue',
                 text: 'Submitting a request does not require the user to hire or continue with any provider.'
             },

@@ -468,7 +468,7 @@
 
                 results.innerHTML = matches.map((service) => `
                     <a href="${service.file}">
-                        <i data-lucide="${service.icon}" aria-hidden="true"></i>
+                        <i data-lucide="chevron-right" aria-hidden="true"></i>
                         <span>${service.title}</span>
                     </a>
                 `).join('');

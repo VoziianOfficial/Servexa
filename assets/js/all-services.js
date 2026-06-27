@@ -269,7 +269,7 @@
                 text: 'Review available participating provider options where service coverage exists.'
             },
             {
-                icon: 'hand-pointer',
+                icon: 'mouse-pointer-click',
                 title: 'Decide next step',
                 text: 'Choose whether to continue based on provider pricing, availability, and terms.'
             }

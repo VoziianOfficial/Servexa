@@ -54,6 +54,7 @@ html {
 
 body {
     margin: 0;
+    padding-top: var(--header-height);
     font-family: var(--font-body);
     font-size: 16px;
     line-height: 1.65;
@@ -439,14 +440,16 @@ p {
 }
 
 .site-header {
-    position: sticky;
+    position: fixed;
     top: 0;
-    z-index: 1000;
+    left: 0;
+    right: 0;
+    z-index: 3000;
+    width: 100%;
     background: var(--color-emerald-dark);
     border-bottom: 1px solid rgba(244, 248, 246, 0.12);
     transition:
         box-shadow var(--transition),
-        transform var(--transition),
         background var(--transition);
 }
 
@@ -1272,7 +1275,7 @@ p {
 .mobile-menu {
     position: fixed;
     inset: 0;
-    z-index: 2000;
+    z-index: 4000;
     display: grid;
     grid-template-rows: auto 1fr;
     color: var(--color-light);
