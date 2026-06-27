@@ -424,7 +424,7 @@
                 <div class="container">
                     <div class="platform-transparency__grid">
                         <div class="platform-transparency__photo photo-cover" data-aos="zoom-in">
-                            <img src="assets/images/hero-about.jpg" alt="Modern home appliance area with premium interior details" width="720" height="720" loading="lazy">
+                            <img src="assets/images/hero-card.jpg" alt="Modern home appliance area with premium interior details" width="720" height="720" loading="lazy">
                         </div>
 
                         <div class="platform-transparency__content" data-aos="fade-left">

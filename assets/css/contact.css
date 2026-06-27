@@ -201,7 +201,6 @@
     display: flex;
     align-items: flex-start;
     gap: 13px;
-    min-height: 118px;
     padding: 18px;
     background: var(--color-white);
     border: 1px solid var(--color-border);
@@ -246,6 +245,11 @@
     overflow: hidden;
 }
 
+.submission-steps .container,
+.submission-steps .container-wide {
+    overflow: hidden;
+}
+
 .submission-steps__head {
     display: flex;
     align-items: end;
@@ -264,16 +268,32 @@
 }
 
 .submission-steps__swiper {
-    overflow: visible;
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden !important;
+}
+
+.submission-steps__swiper .swiper-wrapper {
+    align-items: stretch;
+}
+
+.submission-steps__swiper .swiper-slide {
+    height: auto;
+    min-width: 0;
+    display: flex;
+    justify-content: center;
 }
 
 .submission-step-card {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) auto;
-    align-items: center;
-    gap: 24px;
-    min-height: 230px;
-    padding: 30px 34px;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    min-height: 175px;
+    padding: 20px 82px 20px 22px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    overflow: hidden;
     color: var(--color-light);
     background: var(--color-emerald-dark);
     border: 1px solid rgba(244, 248, 246, 0.13);
@@ -284,31 +304,51 @@
 }
 
 .submission-step-card h3 {
-    margin-bottom: 10px;
+    max-width: 320px;
+    margin-bottom: 8px;
+    padding-right: 46px;
     color: var(--color-light);
+    line-height: 1.1;
 }
 
 .submission-step-card p {
-    max-width: 760px;
+    max-width: 420px;
     color: var(--color-light-muted);
+    font-size: 0.92rem;
+    line-height: 1.48;
 }
 
-.submission-step-card__icon {
-    display: grid;
-    place-items: center;
-    width: 86px;
-    height: 86px;
-    color: var(--color-black-cold);
-    background: var(--color-yellow);
-    border-radius: 24px;
-    box-shadow:
-        0 18px 34px rgba(255, 180, 3, 0.24),
-        inset 0 -4px 0 rgba(7, 9, 9, 0.13);
+.submission-step-card .card-icon,
+.submission-step-card__icon,
+.submission-steps__card .card-icon,
+.submission-steps__card-icon {
+    position: absolute;
+    top: 18px;
+    right: 18px;
+    z-index: 2;
+    width: 42px;
+    height: 42px;
+    color: var(--color-yellow);
 }
 
-.submission-step-card__icon svg {
-    width: 40px;
-    height: 40px;
+.submission-step-card .card-icon svg,
+.submission-step-card__icon svg,
+.submission-steps__card .card-icon svg,
+.submission-steps__card-icon svg {
+    width: 42px;
+    height: 42px;
+    stroke-width: 1.45;
+}
+
+.submission-step-card__number,
+.submission-steps__number {
+    display: inline-flex;
+    margin-bottom: 12px;
+    color: rgba(0, 58, 59, 0.42);
+    font-family: var(--font-heading);
+    font-size: 1.9rem;
+    font-weight: 600;
+    line-height: 1;
 }
 
 .contact-faq__grid {
@@ -453,7 +493,7 @@
     }
 }
 
-@media (max-width: 720px) {
+@media (max-width: 760px) {
 
     .request-intro-card,
     .submission-step-card {
@@ -476,19 +516,37 @@
         min-height: 300px;
     }
 
+    .submission-steps__swiper .swiper-slide {
+        justify-content: center;
+    }
+
     .submission-step-card {
-        min-height: auto;
-        padding: 26px;
+        width: 100%;
+        min-height: 165px;
+        padding: 20px 76px 20px 20px;
     }
 
-    .submission-step-card__icon {
-        width: 70px;
-        height: 70px;
+    .submission-step-card h3,
+    .submission-steps__card h3 {
+        padding-right: 48px;
     }
 
-    .submission-step-card__icon svg {
-        width: 34px;
-        height: 34px;
+    .submission-step-card .card-icon,
+    .submission-step-card__icon,
+    .submission-steps__card .card-icon,
+    .submission-steps__card-icon {
+        top: 18px;
+        right: 18px;
+        width: 38px;
+        height: 38px;
+    }
+
+    .submission-step-card .card-icon svg,
+    .submission-step-card__icon svg,
+    .submission-steps__card .card-icon svg,
+    .submission-steps__card-icon svg {
+        width: 38px;
+        height: 38px;
     }
 }
 

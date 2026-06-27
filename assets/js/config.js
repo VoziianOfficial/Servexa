@@ -14,7 +14,7 @@ window.SERVEXA_SITE_CONFIG = {
         legalName: 'Servexa Provider Matching Platform',
         companyId: 'SX-APPLIANCE-2048',
         address: 'USA Service Area',
-        serviceArea: 'Independent appliance repair provider matching across selected service areas'
+        serviceArea: 'Independent appliance repair provider'
     },
 
     contact: {
@@ -436,27 +436,22 @@ window.SERVEXA_SITE_CONFIG = {
             {
                 title: 'Request received',
                 icon: 'inbox',
-                text: 'Your submitted appliance issue details are received through the Servexa request form.'
+                text: 'Tell Servexa which appliance is causing trouble, what symptoms you noticed, and when the issue started. Clear details help make the request easier to review.'
             },
             {
-                title: 'Details organized',
+                title: 'Add timing and location',
                 icon: 'list-checks',
-                text: 'The request details may be organized around appliance type, symptoms, location, and contact information.'
+                text: 'Include your preferred timing, service area, and any access notes that may help participating providers understand the request before you continue.'
             },
             {
                 title: 'Provider options',
                 icon: 'users',
-                text: 'You may be connected with participating local providers depending on availability and service area.'
+                text: 'Servexa helps organize the request path so you can compare available provider options, response details, and next-step information where available.'
             },
             {
-                title: 'Provider terms',
+                title: 'Choose your next step',
                 icon: 'file-text',
-                text: 'Final pricing, scheduling, warranties, and service terms are provided by participating providers.'
-            },
-            {
-                title: 'User decision',
-                icon: 'mouse-pointer-click',
-                text: 'You choose whether to continue with any provider after reviewing available options.'
+                text: 'You decide whether to continue with a provider based on availability, terms, scheduling, pricing details, and your own comfort level.'
             }
         ],
 

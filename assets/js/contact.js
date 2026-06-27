@@ -414,14 +414,29 @@
 
         if (window.Swiper) {
             new Swiper('.submission-steps__swiper', {
-                slidesPerView: 1,
-                spaceBetween: 18,
+                slidesPerView: 2,
+                spaceBetween: 12,
                 loop: true,
                 speed: 620,
                 grabCursor: true,
+                watchOverflow: true,
                 navigation: {
                     nextEl: '.submission-steps-next',
                     prevEl: '.submission-steps-prev'
+                },
+                breakpoints: {
+                    0: {
+                        slidesPerView: 1,
+                        spaceBetween: 12
+                    },
+                    680: {
+                        slidesPerView: 2,
+                        spaceBetween: 12
+                    },
+                    1180: {
+                        slidesPerView: 2,
+                        spaceBetween: 12
+                    }
                 }
             });
         }
