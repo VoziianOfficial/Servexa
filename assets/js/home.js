@@ -146,6 +146,48 @@
         refreshIcons();
     }
 
+    function buildHomeIconMarquee() {
+        const mount = qs('[data-home-icon-marquee]');
+        if (!mount) return;
+
+        const icons = [
+            'refrigerator',
+            'thermometer-snowflake',
+            'plug-zap',
+            'wrench',
+            'droplets',
+            'flame',
+            'settings-2',
+            'shield-check',
+            'timer-reset',
+            'circle-alert'
+        ];
+
+        const renderRow = () => icons.map((icon) => `
+            <span class="icon-marquee__item" aria-hidden="true">
+                <i data-lucide="${icon}"></i>
+            </span>
+        `).join('');
+
+        mount.innerHTML = `
+            <section class="icon-marquee section section--dark" aria-label="Appliance service icons marquee">
+                <div class="icon-marquee__viewport">
+                    <div class="icon-marquee__track">
+                        <div class="icon-marquee__row">
+                            ${renderRow()}
+                        </div>
+
+                        <div class="icon-marquee__row" aria-hidden="true">
+                            ${renderRow()}
+                        </div>
+                    </div>
+                </div>
+            </section>
+        `;
+
+        refreshIcons();
+    }
+
     function buildPopularCategories() {
         const mount = qs('[data-home-popular-categories]');
         if (!mount) return;
@@ -583,6 +625,7 @@
     }
 
     function init() {
+        buildHomeIconMarquee();
         buildQuickPath();
         buildPopularCategories();
         buildMatchingWorks();
