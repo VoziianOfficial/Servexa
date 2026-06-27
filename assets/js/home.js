@@ -262,26 +262,34 @@
 
         mount.innerHTML = `
             <section class="comparison-factors section section--dark" id="comparison" aria-labelledby="comparison-factors-title">
-                <div class="container">
-                    <div class="comparison-factors__head" data-aos="fade-up">
-                        <p class="section-kicker section-kicker--light">Provider comparison factors</p>
+                <div class="container-wide">
+                    <div class="comparison-factors__layout">
+                        <div class="comparison-factors__content" data-aos="fade-right">
+                            <p class="section-kicker section-kicker--light">Provider comparison factors</p>
 
-                        <h2 id="comparison-factors-title">
-                            Compare what matters before you <span class="text-mark">continue</span>.
-                        </h2>
+                            <h2 id="comparison-factors-title">
+                                Compare what matters before you <span class="text-mark">continue</span>.
+                            </h2>
 
-                        <p>
-                            Provider details can vary by appliance category, service area, timing, and provider-specific terms.
-                        </p>
-                    </div>
+                            <p>
+                                Provider details can vary by appliance category, service area, timing, availability, and provider-specific terms. Servexa keeps the request path clear so users can review options with better context.
+                            </p>
 
-                    <div class="comparison-factors__grid">
-                        ${factors.map((factor, index) => `
-                            <div class="comparison-factors__item" data-aos="fade-up" data-aos-delay="${index * 45}">
-                                <i data-lucide="check" aria-hidden="true"></i>
-                                <span>${safeText(factor)}</span>
+                            <div class="comparison-factors__list">
+                                ${factors.map((factor, index) => `
+                                    <div class="comparison-factors__item" data-aos="fade-up" data-aos-delay="${index * 45}">
+                                        <i data-lucide="check" aria-hidden="true"></i>
+                                        <span>${safeText(factor)}</span>
+                                    </div>
+                                `).join('')}
                             </div>
-                        `).join('')}
+                        </div>
+
+                        <div class="comparison-factors__photo-wrap" data-aos="fade-left">
+                            <div class="comparison-factors__photo photo-cover shine-surface">
+                                <img src="assets/images/service-4.jpg" alt="Modern appliance area prepared for repair provider comparison" width="760" height="760" loading="lazy">
+                            </div>
+                        </div>
                     </div>
                 </div>
             </section>
