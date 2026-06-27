@@ -280,9 +280,7 @@ h4 {
     font-size: 1.35rem;
 }
 
-p {
-    color: var(--color-muted);
-}
+
 
 .section--dark p,
 .section--emerald p,

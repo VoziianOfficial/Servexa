@@ -623,7 +623,7 @@
                         <p class="section-kicker section-kicker--light">How matching works for this service</p>
 
                         <h2 id="service-steps-title">
-                            A focused path for ${safeText(service.title).toLowerCase()} <span class="text-mark">requests</span>.
+                            A focused path for ${safeText(service.title).toLowerCase()} <span class="text-mark">requests</span>
                         </h2>
 
                         <p>
