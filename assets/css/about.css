@@ -20,14 +20,14 @@
 }
 
 .about-story__photo {
-    min-height: 250px;
+    height: 250px;
     border: 1px solid var(--color-border);
     box-shadow: var(--shadow-card);
 }
 
 .about-story__photo--wide {
     grid-column: 1 / -1;
-    min-height: 260px;
+    height: 260px;
 }
 
 .about-story__text {
@@ -395,7 +395,7 @@
 
     .about-story__photo,
     .about-story__photo--wide {
-        min-height: 240px;
+        height: 240px;
     }
 
     .about-story__text {
@@ -441,7 +441,7 @@
 
     .about-story__photo,
     .about-story__photo--wide {
-        min-height: 210px;
+        height: 210px;
     }
 
     .independent-model__item {

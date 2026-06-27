@@ -317,14 +317,6 @@
                                 </span>
 
                                 <span>
-                                    <i data-lucide="badge-check" aria-hidden="true"></i>
-                                    <span>
-                                        <span data-config="company.legalName">${safeText(config.company?.legalName)}</span>
-                                        · ID <span data-config="company.companyId">${safeText(config.company?.companyId)}</span>
-                                    </span>
-                                </span>
-
-                                <span>
                                     <i data-lucide="map" aria-hidden="true"></i>
                                     <span data-config="company.serviceArea">${safeText(config.company?.serviceArea)}</span>
                                 </span>
