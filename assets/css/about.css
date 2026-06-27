@@ -782,3 +782,25 @@
         animation-duration: 22s;
     }
 }
+
+
+.independent-model.section--emerald {
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+    background: url("../images/about-bg.jpg") center / cover no-repeat;
+}
+
+.independent-model.section--emerald::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    background: rgba(0, 0, 0, 0.82);
+    pointer-events: none;
+}
+
+.independent-model.section--emerald>* {
+    position: relative;
+    z-index: 1;
+}
