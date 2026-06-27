@@ -89,14 +89,14 @@
                 {
                     title: 'Not draining',
                     icon: 'waves',
-                    image: 'assets/images/hero-washer.jpg',
-                    sideImage: 'assets/images/service-2.jpg',
+                    image: 'assets/images/card-9.jpg',
+                    sideImage: 'assets/images/card-11.jpg',
                     text: 'Share whether water remains after a cycle, whether draining stopped suddenly, and whether error codes or unusual sounds appear.'
                 },
                 {
                     title: 'Not spinning',
                     icon: 'rotate-cw',
-                    image: 'assets/images/service-2.jpg',
+                    image: 'assets/images/card-10.jpg',
                     sideImage: 'assets/images/hero-washer.jpg',
                     text: 'Describe whether the drum moves, stops mid-cycle, shakes heavily, or leaves clothes soaked. These details may help users review more relevant provider options.'
                 },
@@ -104,7 +104,7 @@
                     title: 'Leaks',
                     icon: 'droplets',
                     image: 'assets/images/service-4.jpg',
-                    sideImage: 'assets/images/service-2.jpg',
+                    sideImage: 'assets/images/card-12.jpg',
                     text: 'Include where water appears, when the leak happens, and whether it is near hoses, the door, or underneath the appliance.'
                 },
                 {
@@ -171,7 +171,7 @@
                 {
                     title: 'Drum concerns',
                     icon: 'rotate-cw-square',
-                    image: 'assets/images/service-2.jpg',
+                    image: 'assets/images/card-10.jpg',
                     sideImage: 'assets/images/service-3.jpg',
                     text: 'Include whether the drum does not move, stops mid-cycle, squeaks, scrapes, or makes repeated sounds.'
                 },
@@ -239,7 +239,7 @@
                 {
                     title: 'Drainage issues',
                     icon: 'waves',
-                    image: 'assets/images/service-2.jpg',
+                    image: 'assets/images/card-12.jpg',
                     sideImage: 'assets/images/service-4.jpg',
                     text: 'Describe standing water, slow draining, odors, or cycle stops. Servexa helps organize the request but does not diagnose directly.'
                 },
