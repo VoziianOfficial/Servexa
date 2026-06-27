@@ -321,7 +321,7 @@
                 <div class="container-wide">
                     <div class="contact-details__grid">
                         <div class="contact-details__photo image-frame" data-aos="fade-right">
-                            <img src="assets/images/hero-about.jpg" alt="Modern appliance area in a premium home" width="760" height="720" loading="lazy">
+                            <img src="assets/images/card-contact.jpg" alt="Modern appliance area in a premium home" width="760" height="720" loading="lazy">
                         </div>
 
                         <div class="contact-details__content" data-aos="fade-left">
