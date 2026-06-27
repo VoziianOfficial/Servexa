@@ -334,6 +334,69 @@
         }
     }
 
+    function buildAboutIconMarquee() {
+        const mount = qs('[data-about-icon-marquee]');
+        if (!mount) return;
+
+        const rowOne = [
+            'shield-check',
+            'badge-check',
+            'search-check',
+            'list-checks',
+            'clipboard-check',
+            'wrench',
+            'plug-zap',
+            'sparkles'
+        ];
+
+        const rowTwo = [
+            'refrigerator',
+            'thermometer-snowflake',
+            'droplets',
+            'settings-2',
+            'users',
+            'handshake',
+            'circle-check',
+            'gauge'
+        ];
+
+        const renderItems = (icons) => icons.map((icon) => `
+            <span class="about-icon-marquee__item" aria-hidden="true">
+                <i data-lucide="${icon}"></i>
+            </span>
+        `).join('');
+
+        mount.innerHTML = `
+            <section class="about-icon-marquee section section--dark" aria-label="About page service icon marquee">
+                <div class="about-icon-marquee__inner">
+                    <div class="about-icon-marquee__row-wrap">
+                        <div class="about-icon-marquee__track">
+                            <div class="about-icon-marquee__row">
+                                ${renderItems(rowOne)}
+                            </div>
+                            <div class="about-icon-marquee__row" aria-hidden="true">
+                                ${renderItems(rowOne)}
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="about-icon-marquee__row-wrap about-icon-marquee__row-wrap--reverse">
+                        <div class="about-icon-marquee__track about-icon-marquee__track--reverse">
+                            <div class="about-icon-marquee__row">
+                                ${renderItems(rowTwo)}
+                            </div>
+                            <div class="about-icon-marquee__row" aria-hidden="true">
+                                ${renderItems(rowTwo)}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        `;
+
+        refreshIcons();
+    }
+
     function buildAboutFAQ() {
         const mount = qs('[data-about-faq]');
         if (!mount) return;
@@ -412,6 +475,7 @@
         buildHomeownerHelp();
         buildCompareCards();
         buildTrustNotes();
+        buildAboutIconMarquee();
         buildAboutFAQ();
 
         refreshIcons();
