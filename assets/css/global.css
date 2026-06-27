@@ -1839,3 +1839,61 @@ a.btn:hover {
         font-size: 3rem;
     }
 }
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    .btn,
+    .slider-btn,
+    .icon-btn,
+    .card,
+    .service-card,
+    .info-card,
+    .request-intro-card,
+    .contact-detail-card,
+    .legal-card,
+    .related-service-card,
+    .accordion-item,
+    .common-issues__card,
+    .submission-step-card,
+    .service-overview__tab,
+    .trust-note-card,
+    .platform-card,
+    .service-showcase-card,
+    .service-showcase__card,
+    .services-intro-card,
+    .compare-card,
+    .process-circle,
+    .popular-category-card,
+    .contact-faq__question {
+        transition: none !important;
+    }
+
+    .btn:hover,
+    .slider-btn:hover,
+    .icon-btn:hover,
+    .card:hover,
+    .service-card:hover,
+    .info-card:hover,
+    .request-intro-card:hover,
+    .contact-detail-card:hover,
+    .legal-card:hover,
+    .related-service-card:hover,
+    .accordion-item:hover,
+    .common-issues__card:hover,
+    .submission-step-card:hover,
+    .service-overview__tab:hover,
+    .trust-note-card:hover,
+    .platform-card:hover,
+    .service-showcase-card:hover,
+    .service-showcase__card:hover,
+    .services-intro-card:hover,
+    .compare-card:hover,
+    .process-circle:hover,
+    .popular-category-card:hover,
+    .contact-faq__question:hover {
+        transform: none !important;
+    }
+}

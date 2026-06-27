@@ -306,3 +306,18 @@
     }
 }
 
+/* ================================
+   Global motion cleanup
+================================ */
+
+.legal-sidebar,
+.legal-card,
+.legal-card--highlight,
+.legal-card--black,
+.legal-disclaimer {
+    box-shadow: none !important;
+}
+
+.legal-sidebar__links a:hover {
+    color: rgba(244, 248, 246, 0.78);
+}

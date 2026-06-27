@@ -573,3 +573,28 @@
         padding: 24px;
     }
 }
+
+/* ================================
+   Global motion cleanup
+================================ */
+
+.services-intro-card,
+.matching-guide__content,
+.request-process__photo,
+.process-circle,
+.services-faq .accordion-item {
+    box-shadow: none !important;
+}
+
+.services-intro-card,
+.process-circle {
+    transition:
+        transform var(--transition),
+        border-color var(--transition),
+        background-color var(--transition),
+        opacity var(--transition);
+}
+
+.process-circle:hover {
+    box-shadow: none !important;
+}

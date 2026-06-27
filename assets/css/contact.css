@@ -589,3 +589,51 @@
     min-height: inherit;
     object-fit: cover;
 }
+
+/* ================================
+   Global motion cleanup
+================================ */
+
+.request-intro-card,
+.contact-request__panel,
+.contact-details__photo,
+.contact-detail-card,
+.submission-step-card,
+.contact-faq__question,
+.contact-faq__answer,
+.contact-faq__answer-icon {
+    box-shadow: none !important;
+}
+
+.contact-request__panel,
+.contact-faq__answer {
+    background: rgba(7, 9, 9, 0.68);
+}
+
+.contact-detail-card,
+.contact-faq__question,
+.submission-step-card {
+    transition:
+        transform var(--transition),
+        border-color var(--transition),
+        background-color var(--transition),
+        opacity var(--transition);
+}
+
+.contact-detail-card:hover {
+    box-shadow: none !important;
+}
+
+.contact-faq__question:hover:not(.is-active) {
+    color: var(--color-text);
+    background: rgba(255, 180, 3, 0.08);
+}
+
+.contact-faq__question.is-active {
+    box-shadow: none !important;
+    background: var(--color-emerald-dark);
+}
+
+.contact-faq__answer-icon {
+    border: 1px solid rgba(255, 180, 3, 0.28);
+}

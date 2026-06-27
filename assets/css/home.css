@@ -1213,3 +1213,104 @@
         animation-duration: 18s;
     }
 }
+
+/* ================================
+   Global motion cleanup
+================================ */
+
+.home-quick-path__button,
+.home-quick-path__button > span,
+.home-quick-path__detail-icon,
+.matching-photo-section__card,
+.comparison-factors__photo,
+.home-stats__inner,
+.platform-transparency__photo,
+.home-faq-switcher__question,
+.home-faq-switcher__answer,
+.icon-marquee__item {
+    box-shadow: none !important;
+}
+
+.home-quick-path__button {
+    transition:
+        transform var(--transition),
+        border-color var(--transition),
+        background-color var(--transition),
+        opacity var(--transition);
+}
+
+.home-quick-path__button:hover:not(.is-active) {
+    color: var(--color-text);
+    background: rgba(255, 180, 3, 0.06);
+    border-color: rgba(255, 180, 3, 0.72);
+}
+
+.home-quick-path__button:hover:not(.is-active) > span {
+    background: rgba(255, 180, 3, 0.82);
+    box-shadow: none !important;
+}
+
+.home-quick-path__button:hover:not(.is-active) svg {
+    transform: translateX(2px);
+}
+
+.home-quick-path__detail-icon {
+    border: 1px solid rgba(255, 180, 3, 0.26);
+}
+
+.comparison-factors__photo,
+.platform-transparency__photo {
+    background: rgba(244, 248, 246, 0.04);
+}
+
+.comparison-factors__item {
+    transition: transform var(--transition), opacity var(--transition);
+}
+
+.comparison-factors__item:hover {
+    color: rgba(244, 248, 246, 0.86);
+}
+
+.home-stats__inner {
+    background: rgba(244, 248, 246, 0.04);
+}
+
+.home-faq-switcher__question {
+    transition:
+        border-color var(--transition),
+        background-color var(--transition),
+        transform var(--transition),
+        opacity var(--transition);
+}
+
+.home-faq-switcher__question:hover:not(.is-active) {
+    color: var(--color-text);
+    background: rgba(255, 180, 3, 0.08);
+}
+
+.home-faq-switcher__question.is-active {
+    box-shadow: none !important;
+    background: var(--color-emerald-dark);
+}
+
+.home-faq-switcher__answer {
+    background: var(--color-white);
+}
+
+.icon-marquee::before,
+.icon-marquee::after {
+    display: none;
+}
+
+.icon-marquee__item {
+    background: rgba(244, 248, 246, 0.05);
+}
+
+.icon-marquee__item:hover {
+    background: rgba(244, 248, 246, 0.08);
+    box-shadow: none !important;
+}
+
+.icon-marquee__item svg {
+    filter: none;
+}

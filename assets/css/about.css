@@ -802,3 +802,64 @@
     position: relative;
     z-index: 1;
 }
+
+/* ================================
+   Global motion cleanup
+================================ */
+
+.about-story__text,
+.about-help__photo,
+.about-help__icon-item,
+.compare-card,
+.trust-note-card__icon,
+.about-faq .accordion-item,
+.about-icon-marquee__item {
+    box-shadow: none !important;
+}
+
+.about-help__photo {
+    background: rgba(244, 248, 246, 0.06);
+}
+
+.trust-note-card__icon {
+    display: grid;
+    place-items: center;
+    width: 62px;
+    height: 62px;
+    align-self: center;
+    color: var(--color-yellow);
+    background: rgba(255, 180, 3, 0.08);
+    border: 1px solid rgba(255, 180, 3, 0.28);
+    border-radius: 20px;
+}
+
+.trust-note-card__icon svg {
+    margin: 0 auto;
+    width: 32px;
+    height: 32px;
+    color: currentColor;
+    stroke: currentColor;
+}
+
+.about-icon-marquee__row-wrap::before,
+.about-icon-marquee__row-wrap::after {
+    display: none;
+}
+
+.about-icon-marquee__item {
+    background: rgba(244, 248, 246, 0.05);
+    transition:
+        transform var(--transition),
+        border-color var(--transition),
+        background-color var(--transition),
+        opacity var(--transition);
+}
+
+.about-icon-marquee__item:hover {
+    background: rgba(244, 248, 246, 0.08);
+    box-shadow: none !important;
+}
+
+.about-icon-marquee__item svg {
+    filter: none;
+}

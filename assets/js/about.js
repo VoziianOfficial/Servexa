@@ -331,6 +331,8 @@
                     }
                 }
             });
+
+            window.setTimeout(refreshIcons, 80);
         }
     }
 
