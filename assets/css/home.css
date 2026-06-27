@@ -45,7 +45,7 @@
 .home-quick-path__button {
     position: relative;
     display: grid;
-    grid-template-columns: auto 1fr auto;
+    grid-template-columns: 14px minmax(0, 1fr) 30px;
     align-items: center;
     gap: 13px;
     width: 100%;
@@ -63,11 +63,12 @@
         transform var(--transition),
         border-color var(--transition),
         background var(--transition),
+        color var(--transition),
         box-shadow var(--transition);
 }
 
-.home-quick-path__button::before {
-    content: "";
+.home-quick-path__button>span {
+    justify-self: center;
     width: 9px;
     height: 9px;
     background: rgba(0, 58, 59, 0.18);
@@ -78,18 +79,25 @@
         box-shadow var(--transition);
 }
 
+.home-quick-path__button strong {
+    min-width: 0;
+    color: inherit;
+    font-family: var(--font-heading);
+    font-size: clamp(1.18rem, 1.4vw, 1.38rem);
+    font-weight: 600;
+    line-height: 1.05;
+    letter-spacing: -0.025em;
+}
+
 .home-quick-path__button svg {
-    width: 24px;
-    height: 24px;
+    justify-self: end;
+    width: 26px;
+    height: 26px;
     color: var(--color-emerald-dark);
+    stroke-width: 1.7;
     transition:
         color var(--transition),
         transform var(--transition);
-}
-
-.home-quick-path__button span {
-    font-weight: 900;
-    line-height: 1.22;
 }
 
 .home-quick-path__button:hover,
@@ -103,8 +111,8 @@
         inset 0 1px 0 rgba(244, 248, 246, 0.12);
 }
 
-.home-quick-path__button:hover::before,
-.home-quick-path__button.is-active::before {
+.home-quick-path__button:hover>span,
+.home-quick-path__button.is-active>span {
     background: var(--color-yellow);
     box-shadow: 0 0 0 5px rgba(255, 180, 3, 0.16);
 }
@@ -112,7 +120,7 @@
 .home-quick-path__button:hover svg,
 .home-quick-path__button.is-active svg {
     color: var(--color-yellow);
-    transform: rotate(-4deg) scale(1.06);
+    transform: translateX(2px);
 }
 
 .home-quick-path__detail {
@@ -651,14 +659,22 @@
         gap: 9px;
     }
 
-    .home-quick-path__button {
-        grid-template-columns: auto 1fr;
-        min-height: 58px;
-    }
+ .home-quick-path__button {
+     grid-template-columns: 12px minmax(0, 1fr) 24px;
+     gap: 10px;
+     min-height: 56px;
+     padding: 13px 14px;
+ }
 
-    .home-quick-path__button svg {
-        display: none;
-    }
+ .home-quick-path__button strong {
+     font-size: 1.08rem;
+ }
+
+ .home-quick-path__button svg {
+     display: block;
+     width: 22px;
+     height: 22px;
+ }
 
     .popular-category-card {
         padding: 21px;
