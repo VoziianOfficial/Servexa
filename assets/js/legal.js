@@ -380,7 +380,7 @@
 
                 <span>
                     <i data-lucide="badge-check" aria-hidden="true"></i>
-                    <span>${safeText(config.company?.legalName)} · ${safeText(config.company?.companyId)}</span>
+                    <span>${safeText(config.company?.legalName)} ${safeText(config.company?.companyId)}</span>
                 </span>
             </div>
         `;

@@ -12,7 +12,6 @@ window.SERVEXA_SITE_CONFIG = {
     company: {
         name: 'Servexa',
         legalName: 'Servexa Provider Matching Platform',
-        companyId: 'SX-APPLIANCE-2048',
         address: 'USA Service Area',
         serviceArea: 'Independent appliance repair provider'
     },
