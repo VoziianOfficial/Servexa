@@ -453,3 +453,97 @@
         justify-content: flex-start;
     }
 }
+
+.trust-notes {
+    overflow: hidden;
+}
+
+.trust-notes .container {
+    overflow: hidden;
+}
+
+.trust-notes__top {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 18px;
+}
+
+.trust-notes__swiper {
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden !important;
+}
+
+.trust-notes__swiper .swiper-wrapper {
+    align-items: stretch;
+}
+
+.trust-notes__swiper .swiper-slide {
+    height: auto;
+    min-width: 0;
+}
+
+.trust-note-card {
+    position: relative;
+    height: 100%;
+    min-height: 210px;
+    display: flex;
+    justify-content: space-between;
+    gap: 18px;
+    padding: 22px;
+    background: var(--color-white);
+    border: 1px solid var(--color-border);
+    border-radius: 24px;
+    box-shadow: 0 16px 38px rgba(0, 58, 59, 0.08);
+    overflow: hidden;
+}
+
+.trust-note-card h3 {
+    max-width: 340px;
+    margin-bottom: 10px;
+    color: var(--color-emerald-dark);
+    font-size: clamp(1.35rem, 1.8vw, 1.75rem);
+    line-height: 1.08;
+}
+
+.trust-note-card p {
+    max-width: 390px;
+    font-size: 0.94rem;
+    line-height: 1.58;
+}
+
+.trust-note-card__icon {
+    display: inline-flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex: 0 0 auto;
+    color: var(--color-yellow);
+}
+
+.trust-note-card__icon svg {
+    width: 46px;
+    height: 46px;
+    stroke-width: 1.45;
+}
+
+@media (max-width: 760px) {
+    .trust-notes .container {
+        overflow: hidden;
+    }
+
+    .trust-notes__top {
+        justify-content: center;
+        margin-bottom: 16px;
+    }
+
+    .trust-note-card {
+        min-height: 190px;
+        padding: 20px;
+        border-radius: 22px;
+    }
+
+    .trust-note-card__icon svg {
+        width: 38px;
+        height: 38px;
+    }
+}

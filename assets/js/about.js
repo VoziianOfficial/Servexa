@@ -306,14 +306,29 @@
 
         if (window.Swiper) {
             new Swiper('.trust-notes__swiper', {
-                slidesPerView: 1,
+                slidesPerView: 2,
                 spaceBetween: 18,
                 loop: true,
                 speed: 620,
                 grabCursor: true,
+                watchOverflow: true,
                 navigation: {
                     nextEl: '.trust-notes-next',
                     prevEl: '.trust-notes-prev'
+                },
+                breakpoints: {
+                    0: {
+                        slidesPerView: 1,
+                        spaceBetween: 14
+                    },
+                    680: {
+                        slidesPerView: 2,
+                        spaceBetween: 16
+                    },
+                    1180: {
+                        slidesPerView: 2,
+                        spaceBetween: 18
+                    }
                 }
             });
         }
