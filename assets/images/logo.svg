@@ -1,0 +1,80 @@
+<svg width="320" height="220" viewBox="0 0 320 220" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="servexaLogoWhiteTitle servexaLogoWhiteDesc">
+    <title id="servexaLogoWhiteTitle">Servexa logo light version</title>
+    <desc id="servexaLogoWhiteDesc">Minimal house outline with a repair gear inside, thin white and yellow version for dark backgrounds.</desc>
+
+    <defs>
+        <style>
+            .servexa-light {
+                stroke: #F4F8F6;
+                stroke-width: 8;
+                stroke-linecap: round;
+                stroke-linejoin: round;
+                fill: none;
+                vector-effect: non-scaling-stroke;
+            }
+
+            .servexa-accent {
+                stroke: #FFB403;
+                stroke-width: 8;
+                stroke-linecap: round;
+                stroke-linejoin: round;
+                fill: none;
+                vector-effect: non-scaling-stroke;
+            }
+
+            .servexa-fill-accent {
+                fill: #FFB403;
+            }
+        </style>
+    </defs>
+
+    <path class="servexa-light" d="M72 88L160 36L248 88" />
+    <path class="servexa-light" d="M92 98V170H124" />
+    <path class="servexa-light" d="M228 98V170H196" />
+
+    <path class="servexa-light" d="M160 78
+        L174 78
+        C178 78 181 81 181 85
+        L181 94
+        L189 90
+        C192 88 196 89 199 92
+        L209 102
+        C212 105 212 109 210 112
+        L206 120
+        L215 120
+        C219 120 222 123 222 127
+        L222 141
+        C222 145 219 148 215 148
+        L206 148
+        L210 156
+        C212 159 212 163 209 166
+        L199 176
+        C196 179 192 180 189 178
+        L181 174
+        L181 183
+        C181 187 178 190 174 190
+        L160 190
+        C156 190 153 187 153 183
+        L153 174
+        L145 178
+        C142 180 138 179 135 176
+        L125 166
+        C122 163 122 159 124 156
+        L128 148
+        L119 148
+        C115 148 112 145 112 141
+        L112 127
+        C112 123 115 120 119 120
+        L128 120
+        L124 112
+        C122 109 122 105 125 102
+        L135 92
+        C138 89 142 88 145 90
+        L153 94
+        L153 85
+        C153 81 156 78 160 78Z" />
+
+    <circle class="servexa-light" cx="167" cy="134" r="25" />
+    <path class="servexa-accent" d="M248 88L160 36" />
+    <circle class="servexa-fill-accent" cx="167" cy="134" r="4" />
+</svg>

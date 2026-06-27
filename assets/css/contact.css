@@ -1,0 +1,517 @@
+.request-intro {
+    overflow: hidden;
+}
+
+.request-intro__head {
+    max-width: 720px;
+    margin: 0 auto 34px;
+    text-align: center;
+}
+
+.request-intro__head .section-kicker {
+    justify-content: center;
+}
+
+.request-intro__grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+}
+
+.request-intro-card {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 18px;
+    min-height: 220px;
+    padding: 26px;
+    color: var(--color-light);
+    background: var(--color-emerald-dark);
+    border: 1px solid rgba(244, 248, 246, 0.12);
+    border-radius: var(--radius-lg);
+    box-shadow:
+        0 22px 58px rgba(0, 58, 59, 0.18),
+        inset 0 1px 0 rgba(244, 248, 246, 0.12);
+    transition:
+        transform var(--transition),
+        border-color var(--transition),
+        background var(--transition);
+}
+
+.request-intro-card:nth-child(2) {
+    background: var(--color-emerald-muted);
+}
+
+.request-intro-card:nth-child(3) {
+    background: var(--color-black-cold);
+}
+
+.request-intro-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(255, 180, 3, 0.78);
+}
+
+.request-intro-card h3 {
+    margin-bottom: 10px;
+    color: var(--color-light);
+}
+
+.request-intro-card p {
+    color: var(--color-light-muted);
+    font-size: 0.95rem;
+}
+
+.request-intro-card svg {
+    width: 58px;
+    height: 58px;
+    color: var(--color-yellow);
+    stroke-width: 1.45;
+}
+
+.contact-request {
+    position: relative;
+    color: var(--color-light);
+    background: var(--color-black-cold);
+    isolation: isolate;
+    overflow: hidden;
+}
+
+.contact-request__bg {
+    position: absolute;
+    inset: 0;
+    z-index: -2;
+}
+
+.contact-request__bg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.contact-request::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background: rgba(7, 9, 9, 0.58);
+}
+
+.contact-request__grid {
+    display: grid;
+    grid-template-columns: minmax(320px, 0.78fr) minmax(360px, 0.82fr);
+    gap: 26px;
+    align-items: stretch;
+}
+
+.contact-request__panel {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 610px;
+    padding: 34px;
+    background: rgba(7, 9, 9, 0.68);
+    border: 1px solid rgba(244, 248, 246, 0.16);
+    border-radius: 28px;
+    box-shadow: var(--shadow-dark);
+    backdrop-filter: blur(8px);
+}
+
+.contact-request__panel h2 {
+    max-width: 560px;
+    color: var(--color-light);
+}
+
+.contact-request__panel p {
+    margin-top: 14px;
+}
+
+.contact-request__list {
+    display: grid;
+    gap: 12px;
+    margin-top: 26px;
+}
+
+.contact-request__list-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding-top: 12px;
+    color: rgba(244, 248, 246, 0.84);
+    border-top: 1px solid rgba(244, 248, 246, 0.15);
+    font-weight: 750;
+}
+
+.contact-request__list-item svg {
+    width: 20px;
+    height: 20px;
+    flex: 0 0 auto;
+    margin-top: 3px;
+    color: var(--color-yellow);
+}
+
+.contact-request__form {
+    padding: 28px;
+    align-self: stretch;
+}
+
+.contact-request__form h3 {
+    margin-bottom: 8px;
+    color: var(--color-emerald-dark);
+}
+
+.contact-request__form>p {
+    margin-bottom: 20px;
+    color: var(--color-muted);
+    font-size: 0.94rem;
+}
+
+.contact-request__form .btn {
+    width: 100%;
+}
+
+.contact-details__grid {
+    display: grid;
+    grid-template-columns: minmax(320px, 0.9fr) minmax(0, 1fr);
+    gap: 46px;
+    align-items: center;
+}
+
+.contact-details__photo {
+    min-height: 520px;
+    border: 1px solid var(--color-border);
+    box-shadow: var(--shadow-card);
+}
+
+.contact-details__content h2 {
+    max-width: 620px;
+}
+
+.contact-details__content>p {
+    max-width: 680px;
+    margin-top: 16px;
+}
+
+.contact-details__cards {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+    margin-top: 28px;
+}
+
+.contact-detail-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 13px;
+    min-height: 118px;
+    padding: 18px;
+    background: var(--color-white);
+    border: 1px solid var(--color-border);
+    border-radius: 20px;
+    box-shadow: 0 14px 32px rgba(0, 58, 59, 0.06);
+    transition:
+        transform var(--transition),
+        border-color var(--transition),
+        box-shadow var(--transition);
+}
+
+.contact-detail-card:hover {
+    transform: translateY(-3px);
+    border-color: rgba(255, 180, 3, 0.72);
+    box-shadow: 0 18px 42px rgba(0, 58, 59, 0.10);
+}
+
+.contact-detail-card svg {
+    width: 24px;
+    height: 24px;
+    flex: 0 0 auto;
+    color: var(--color-yellow);
+}
+
+.contact-detail-card strong {
+    display: block;
+    margin-bottom: 4px;
+    color: var(--color-text);
+    font-size: 0.9rem;
+    line-height: 1.2;
+}
+
+.contact-detail-card a,
+.contact-detail-card span {
+    color: var(--color-muted);
+    font-size: 0.92rem;
+    line-height: 1.45;
+    word-break: break-word;
+}
+
+.submission-steps {
+    overflow: hidden;
+}
+
+.submission-steps__head {
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    gap: 24px;
+    margin-bottom: 24px;
+}
+
+.submission-steps__head h2 {
+    max-width: 640px;
+}
+
+.submission-steps__head p {
+    max-width: 520px;
+    margin-top: 12px;
+}
+
+.submission-steps__swiper {
+    overflow: visible;
+}
+
+.submission-step-card {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: center;
+    gap: 24px;
+    min-height: 230px;
+    padding: 30px 34px;
+    color: var(--color-light);
+    background: var(--color-emerald-dark);
+    border: 1px solid rgba(244, 248, 246, 0.13);
+    border-radius: 26px;
+    box-shadow:
+        0 24px 70px rgba(0, 58, 59, 0.22),
+        inset 0 1px 0 rgba(244, 248, 246, 0.12);
+}
+
+.submission-step-card h3 {
+    margin-bottom: 10px;
+    color: var(--color-light);
+}
+
+.submission-step-card p {
+    max-width: 760px;
+    color: var(--color-light-muted);
+}
+
+.submission-step-card__icon {
+    display: grid;
+    place-items: center;
+    width: 86px;
+    height: 86px;
+    color: var(--color-black-cold);
+    background: var(--color-yellow);
+    border-radius: 24px;
+    box-shadow:
+        0 18px 34px rgba(255, 180, 3, 0.24),
+        inset 0 -4px 0 rgba(7, 9, 9, 0.13);
+}
+
+.submission-step-card__icon svg {
+    width: 40px;
+    height: 40px;
+}
+
+.contact-faq__grid {
+    display: grid;
+    grid-template-columns: minmax(280px, 0.72fr) minmax(0, 1fr);
+    gap: 34px;
+    align-items: stretch;
+}
+
+.contact-faq__cards {
+    display: grid;
+    gap: 12px;
+}
+
+.contact-faq__question {
+    position: relative;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+    gap: 13px;
+    width: 100%;
+    min-height: 68px;
+    padding: 16px;
+    color: var(--color-text);
+    background: var(--color-white);
+    border: 1px solid var(--color-border);
+    border-radius: 18px;
+    text-align: left;
+    font-weight: 900;
+    box-shadow: 0 12px 28px rgba(0, 58, 59, 0.06);
+    transition:
+        transform var(--transition),
+        border-color var(--transition),
+        background var(--transition),
+        color var(--transition);
+}
+
+.contact-faq__question svg {
+    width: 22px;
+    height: 22px;
+    color: var(--color-emerald-dark);
+    transition: color var(--transition), transform var(--transition);
+}
+
+.contact-faq__question:hover,
+.contact-faq__question.is-active {
+    color: var(--color-light);
+    background: var(--color-emerald-dark);
+    border-color: rgba(255, 180, 3, 0.72);
+    transform: translateY(-2px);
+}
+
+.contact-faq__question:hover svg,
+.contact-faq__question.is-active svg {
+    color: var(--color-yellow);
+    transform: rotate(-4deg) scale(1.05);
+}
+
+.contact-faq__answer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 340px;
+    padding: 34px;
+    color: var(--color-light);
+    background: var(--color-black-cold);
+    border: 1px solid rgba(244, 248, 246, 0.12);
+    border-radius: 28px;
+    box-shadow: var(--shadow-dark);
+}
+
+.contact-faq__answer-icon {
+    display: grid;
+    place-items: center;
+    width: 68px;
+    height: 68px;
+    margin-bottom: 20px;
+    color: var(--color-black-cold);
+    background: var(--color-yellow);
+    border-radius: 20px;
+    box-shadow:
+        0 18px 34px rgba(255, 180, 3, 0.22),
+        inset 0 -4px 0 rgba(7, 9, 9, 0.13);
+}
+
+.contact-faq__answer-icon svg {
+    width: 32px;
+    height: 32px;
+}
+
+.contact-faq__answer h3 {
+    margin-bottom: 12px;
+    color: var(--color-light);
+}
+
+.contact-faq__answer p {
+    max-width: 720px;
+    color: var(--color-light-muted);
+}
+
+@media (max-width: 1100px) {
+    .request-intro__grid {
+        grid-template-columns: 1fr;
+    }
+
+    .request-intro-card {
+        min-height: 180px;
+    }
+
+    .contact-details__cards {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 980px) {
+
+    .contact-request__grid,
+    .contact-details__grid,
+    .contact-faq__grid {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-request__panel {
+        min-height: auto;
+    }
+
+    .contact-details__photo {
+        min-height: 390px;
+    }
+
+    .submission-steps__head {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .submission-steps__head .slider-controls {
+        align-self: flex-start;
+    }
+
+    .contact-faq__answer {
+        min-height: 280px;
+    }
+}
+
+@media (max-width: 720px) {
+
+    .request-intro-card,
+    .submission-step-card {
+        grid-template-columns: 1fr;
+    }
+
+    .request-intro-card svg {
+        width: 50px;
+        height: 50px;
+    }
+
+    .contact-request__form,
+    .contact-request__panel,
+    .contact-faq__answer {
+        padding: 24px;
+        border-radius: 22px;
+    }
+
+    .contact-details__photo {
+        min-height: 300px;
+    }
+
+    .submission-step-card {
+        min-height: auto;
+        padding: 26px;
+    }
+
+    .submission-step-card__icon {
+        width: 70px;
+        height: 70px;
+    }
+
+    .submission-step-card__icon svg {
+        width: 34px;
+        height: 34px;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .contact-request__form,
+    .contact-request__panel {
+        padding: 20px;
+    }
+
+    .contact-details__photo {
+        min-height: 260px;
+    }
+
+    .contact-detail-card {
+        min-height: auto;
+    }
+
+    .contact-faq__question {
+        min-height: 62px;
+    }
+
+    .contact-faq__answer {
+        min-height: auto;
+    }
+}
