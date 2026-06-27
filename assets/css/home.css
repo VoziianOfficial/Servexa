@@ -263,6 +263,7 @@
 
 .matching-photo-section__card {
     width: min(620px, 100%);
+    margin-block: 38px;
     padding: 34px;
     background: rgba(7, 9, 9, 0.68);
     border: 1px solid rgba(244, 248, 246, 0.16);
@@ -629,6 +630,10 @@
     .matching-photo-section__card {
         padding: 24px;
         border-radius: 22px;
+    }
+
+    .matching-photo-section__card {
+              margin-block: 26px;
     }
 
     .home-stats__inner {
