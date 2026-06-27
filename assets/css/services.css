@@ -31,7 +31,6 @@
     grid-template-columns: minmax(0, 1fr) auto;
     align-items: center;
     gap: 16px;
-    min-height: 108px;
     padding: 18px;
     color: var(--color-text);
     background: var(--color-white);
@@ -500,10 +499,6 @@
     .common-issues__list,
     .choice-factors__lines {
         grid-template-columns: 1fr;
-    }
-
-    .service-overview__tab {
-        min-height: 88px;
     }
 
     .service-overview__photo-main {
