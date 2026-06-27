@@ -777,7 +777,7 @@ p {
     position: relative;
 }
 
-.service-search svg {
+.service-search>svg {
     position: absolute;
     top: 50%;
     left: 15px;
@@ -841,6 +841,17 @@ p {
     border-radius: 12px;
     font-size: 0.9rem;
     font-weight: 800;
+}
+
+.search-results a svg,
+.search-results span svg {
+    position: static;
+    width: 18px;
+    height: 18px;
+    flex: 0 0 18px;
+    color: var(--color-yellow);
+    transform: none;
+    pointer-events: none;
 }
 
 .search-results a:hover {
