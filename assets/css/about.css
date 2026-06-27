@@ -514,15 +514,17 @@
 
 .trust-note-card__icon {
     display: inline-flex;
-    align-items: flex-start;
+    align-items: center;
     justify-content: center;
     flex: 0 0 auto;
-    color: var(--color-yellow);
 }
 
 .trust-note-card__icon svg {
+    display: block;
     width: 46px;
     height: 46px;
+    color: currentColor;
+    stroke: currentColor;
     stroke-width: 1.45;
 }
 

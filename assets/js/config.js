@@ -368,17 +368,17 @@ window.SERVEXA_SITE_CONFIG = {
             },
             {
                 title: 'Availability may vary',
-                icon: 'map-pin',
+                icon: 'search-check',
                 text: 'Provider availability depends on location, appliance category, timing, and participating provider coverage.'
             },
             {
                 title: 'Provider pricing',
-                icon: 'receipt-text',
+                icon: 'clipboard-check',
                 text: 'Final pricing, service terms, scheduling, and warranty details come from participating providers.'
             },
             {
                 title: 'User choice',
-                icon: 'mouse-pointer-click',
+                icon: 'circle-check',
                 text: 'Users decide whether to continue with a provider after reviewing available options.'
             },
             {
@@ -388,7 +388,7 @@ window.SERVEXA_SITE_CONFIG = {
             },
             {
                 title: 'No service agreement by request',
-                icon: 'file-check-2',
+                icon: 'file-check',
                 text: 'Submitting a request through Servexa does not create a repair contract or service agreement.'
             }
         ],
