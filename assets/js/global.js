@@ -384,9 +384,77 @@
         });
     }
 
+    function buildPostHeroLinks() {
+        const createLink = (label, icon, target) => ({ label, icon, target });
+        const services = Array.isArray(config.services) ? config.services : [];
+        const servicePageFiles = new Set(services.map((service) => normalizePath(service.file)));
+
+        if (currentPage === 'index.html') {
+            return [
+                createLink('Overview', 'layout-list', '#overview'),
+                createLink('Services', 'wrench', '#services'),
+                createLink('Process', 'route', '#process'),
+                createLink('Comparison', 'scale', '#comparison'),
+                createLink('FAQ', 'circle-help', '#faq')
+            ];
+        }
+
+        if (currentPage === 'about.html') {
+            return [
+                createLink('Overview', 'layout-list', '#overview'),
+                createLink('Comparison', 'scale', '#comparison'),
+                createLink('Process', 'route', '#process'),
+                createLink('FAQ', 'circle-help', '#faq'),
+                createLink('Contact', 'send', 'contact.html#contact')
+            ];
+        }
+
+        if (currentPage === 'all-services.html') {
+            return [
+                createLink('Overview', 'layout-list', '#overview'),
+                createLink('Services', 'wrench', '#services'),
+                createLink('Process', 'route', '#process'),
+                createLink('FAQ', 'circle-help', '#faq'),
+                createLink('Contact', 'send', 'contact.html#contact')
+            ];
+        }
+
+        if (currentPage === 'contact.html') {
+            return [
+                createLink('Overview', 'layout-list', '#overview'),
+                createLink('Process', 'route', '#process'),
+                createLink('FAQ', 'circle-help', '#faq'),
+                createLink('Contact', 'send', '#contact'),
+                createLink('Services', 'wrench', 'all-services.html#services')
+            ];
+        }
+
+        if (servicePageFiles.has(currentPage)) {
+            return [
+                createLink('Overview', 'layout-list', '#overview'),
+                createLink('Process', 'route', '#process'),
+                createLink('Comparison', 'scale', '#comparison'),
+                createLink('Services', 'wrench', '#services'),
+                createLink('FAQ', 'circle-help', '#faq')
+            ];
+        }
+
+        if (currentPage === 'privacy-policy.html' || currentPage === 'terms-of-service.html' || currentPage === 'cookie-policy.html') {
+            return [
+                createLink('Overview', 'layout-list', '#overview'),
+                createLink('Privacy', 'shield-check', 'privacy-policy.html#overview'),
+                createLink('Terms', 'file-text', 'terms-of-service.html#overview'),
+                createLink('Cookies', 'cookie', 'cookie-policy.html#overview'),
+                createLink('Contact', 'send', 'contact.html#contact')
+            ];
+        }
+
+        return config.postHeroNav?.defaultLinks || [];
+    }
+
     function buildPostHeroStrip() {
         qsa('[data-post-hero-strip]').forEach((strip) => {
-            const links = config.postHeroNav?.defaultLinks || [];
+            const links = buildPostHeroLinks();
             const placeholder = config.postHeroNav?.searchPlaceholder || 'Search services';
 
             strip.innerHTML = `
