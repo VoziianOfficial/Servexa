@@ -77,7 +77,7 @@
     function buildLogoHTML() {
         return `
             <a class="site-logo" href="index.html" aria-label="${safeText(config.brand?.name)} home">
-                <img class="site-logo__icon" src="${safeText(config.brand?.logo)}" alt="${safeText(config.brand?.logoAlt)}" width="64" height="44">
+                <img class="site-logo__icon" src="${safeText(config.brand?.logo)}" alt="${safeText(config.brand?.logoAlt)}" width="96" height="85">
                 <span class="site-logo__text">
                     <span class="site-logo__name" data-config="brand.name">${safeText(config.brand?.name)}</span>
                     <span class="site-logo__tagline" data-config="brand.shortTagline">${safeText(config.brand?.shortTagline)}</span>

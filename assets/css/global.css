@@ -471,9 +471,15 @@ p {
 }
 
 .site-logo__icon {
-    width: 54px;
-    height: 42px;
+    width: 76px;
+    height: auto;
+    aspect-ratio: 192 / 170;
     object-fit: contain;
+    flex: 0 0 auto;
+    flex-shrink: 0;
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    image-rendering: auto;
 }
 
 .site-logo__text {
@@ -1183,8 +1189,8 @@ p {
 }
 
 .footer-brand .site-logo__icon {
-    width: 66px;
-    height: 52px;
+    width: 92px;
+    height: auto;
 }
 
 .footer-brand .site-logo__name {
@@ -1488,8 +1494,8 @@ p {
     }
 
     .site-logo__icon {
-        width: 48px;
-        height: 38px;
+        width: 68px;
+        height: auto;
     }
 
     .site-logo__name {
@@ -1638,8 +1644,8 @@ p {
     }
 
     .site-logo__icon {
-        width: 42px;
-        height: 34px;
+        width: 58px;
+        height: auto;
     }
 
     .site-logo__name {
