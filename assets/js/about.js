@@ -41,7 +41,7 @@
 
                     <div class="about-story__collage">
                         <div class="about-story__photo image-frame" data-aos="zoom-in">
-                            <img src="assets/images/service-1.jpg" alt="Modern refrigerator in a clean kitchen" width="520" height="520" loading="lazy">
+                            <img src="assets/images/service-story-1.jpg" alt="Modern refrigerator in a clean kitchen" width="520" height="520" loading="lazy">
                         </div>
 
                         <div class="about-story__photo image-frame" data-aos="zoom-in" data-aos-delay="70">
@@ -57,7 +57,7 @@
                         </div>
 
                         <div class="about-story__photo about-story__photo--wide image-frame" data-aos="fade-up">
-                            <img src="assets/images/hero-about.jpg" alt="Premium home appliance area" width="1320" height="520" loading="lazy">
+                            <img src="assets/images/about-card.jpg" alt="Premium home appliance area" width="1320" height="520" loading="lazy">
                         </div>
                     </div>
 
