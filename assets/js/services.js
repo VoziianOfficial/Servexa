@@ -36,7 +36,7 @@
                     title: 'Leaks or water',
                     icon: 'droplets',
                     image: 'assets/images/hero-dishwasher.jpg',
-                    sideImage: 'assets/images/service-4.jpg',
+                    sideImage: 'assets/images/card-4.jpg',
                     text: 'Include where water appears, whether the leak happens near the dispenser or bottom area, and whether the appliance has an ice maker or water line.'
                 },
                 {
@@ -103,7 +103,7 @@
                 {
                     title: 'Leaks',
                     icon: 'droplets',
-                    image: 'assets/images/service-4.jpg',
+                    image: 'assets/images/card-11.jpg',
                     sideImage: 'assets/images/card-12.jpg',
                     text: 'Include where water appears, when the leak happens, and whether it is near hoses, the door, or underneath the appliance.'
                 },
@@ -226,13 +226,13 @@
                     title: 'Poor cleaning',
                     icon: 'sparkles',
                     image: 'assets/images/hero-dishwasher.jpg',
-                    sideImage: 'assets/images/service-4.jpg',
+                    sideImage: 'assets/images/card-12.jpg',
                     text: 'Share whether dishes remain cloudy, greasy, gritty, or wet after cycles. Mention cycle type, detergent changes, and visible residue if helpful.'
                 },
                 {
                     title: 'Leaking',
                     icon: 'droplets',
-                    image: 'assets/images/service-4.jpg',
+                    image: 'assets/images/card-11.jpg',
                     sideImage: 'assets/images/hero-dishwasher.jpg',
                     text: 'Include whether water appears near the door, underneath the appliance, or after specific cycle stages.'
                 },
