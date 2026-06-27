@@ -342,9 +342,11 @@
 }
 
 .choice-factors__photo {
-    width: min(470px, 100%);
+    width: min(560px, calc(100% + 96px));
     aspect-ratio: 1;
-    margin-inline: auto;
+    margin-inline: 0;
+    justify-self: end;
+    transform: translateX(-48px);
     border-radius: 50%;
     border: 1px solid var(--color-border);
     box-shadow:
@@ -535,6 +537,13 @@
 
     .choice-factors__content h2,
     .choice-factors__content>p {
+        margin-inline: auto;
+    }
+
+    .choice-factors__photo {
+        width: min(470px, 100%);
+        justify-self: center;
+        transform: none;
         margin-inline: auto;
     }
 

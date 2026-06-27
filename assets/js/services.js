@@ -721,7 +721,7 @@
                 <div class="container">
                     <div class="choice-factors__grid">
                         <div class="choice-factors__photo photo-cover" data-reveal="scale">
-                            <img src="${safeText(service.heroImage)}" alt="${safeText(service.title)} provider choice factors" width="760" height="760" loading="lazy">
+                            <img src="assets/images/card-11.jpg" alt="${safeText(service.title)} provider choice factors" width="760" height="760" loading="lazy">
                         </div>
 
                         <div class="choice-factors__content" data-reveal="right">
