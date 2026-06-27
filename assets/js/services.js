@@ -362,7 +362,7 @@
                     title: 'Unknown symptoms',
                     icon: 'search-check',
                     image: 'assets/images/hero-diagnostics.jpg',
-                    sideImage: 'assets/images/service-6.jpg',
+                    sideImage: 'assets/images/card-11.jpg',
                     text: 'Describe what changed, how often it happens, and whether the appliance still powers on or completes cycles.'
                 },
                 {
@@ -376,7 +376,7 @@
                     title: 'Power issues',
                     icon: 'plug-zap',
                     image: 'assets/images/hero-contact.jpg',
-                    sideImage: 'assets/images/service-6.jpg',
+                    sideImage: 'assets/images/card-12.jpg',
                     text: 'Mention whether the appliance turns on, shuts off, trips power, shows display issues, or loses power during use.'
                 },
                 {
