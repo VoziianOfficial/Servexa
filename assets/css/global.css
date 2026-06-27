@@ -1897,3 +1897,37 @@ a.btn:hover {
 }
 
 
+/* Strong real dark overlay for shared heroes */
+
+.shared-hero {
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+}
+
+.shared-hero__image {
+    position: absolute !important;
+    inset: 0 !important;
+    z-index: 0 !important;
+}
+
+.shared-hero__image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.shared-hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 1 !important;
+    background: rgba(0, 0, 0, 0.78) !important;
+    pointer-events: none;
+}
+
+.shared-hero__content,
+.shared-hero__inner {
+    position: relative;
+    z-index: 2 !important;
+}
